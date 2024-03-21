@@ -1,0 +1,12 @@
+patch:
+  # 下面兩行是導入自定義配色方案文件
+  keyboard/colorSchemas:
+    __include: custom_color_schemas:/keyboard/colorSchemas
+  # 下面兩行是導入自定義鍵盤佈局文件, 如果使用倉UI導入則不需要這兩行
+  keyboards:
+    __include: custom_keyboards:/keyboards
+  keyboard/+:
+    style:
+      fontFace:
+        - url: "ziti.ttf"
+        - url: "SymbolsNerdFontMono-Regular.ttf"      

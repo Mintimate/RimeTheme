@@ -1,0 +1,56 @@
+keyboard:
+  colorSchemas:
+    - schemaName: Mint Light Blue
+      name: 蓝水鸭
+      author: Mintimate
+      back_color: "0xFFFFFF"
+      button_back_color: "0xFDFDFD"
+      button_pressed_back_color: "0xF4F6F4"
+      button_bubble_back_color: "0x82FFCBAD"
+      button_foreground_color: "0x696969"
+      button_pressed_foreground_color: "0x696969"
+      button_swipe_foreground_color: "0x696969"
+      font_size: 16
+      swipe_font_size: 8
+      corner_radius: 10
+      border_color: "0x0F000000"
+      text_color: "0x696969"
+      lower_edge_color: "0x05000000"
+      shadow_color: "0x474747"
+      shadow_size: 2
+      hilited_candidate_back_color: "0xFDFDFD"
+      hilited_candidate_text_color: "0xFA708E4D"
+      hilited_candidate_label_color: "0x696969"
+      hilited_comment_text_color: "0x696969"
+      candidate_text_color: "0x696969"
+      comment_text_color: "0x696969"
+      label_color: "0x696969"
+      hilited_callout_back_color: "0xFDFDFD"
+      hilited_callout_foreground_color: "0x708E4D"
+    - schemaName: Mint Dark Blue
+      name: 黑水鸭
+      author: Mintimate
+      back_color: "0x4D4D4D"
+      button_back_color: "0x858585"
+      button_pressed_back_color: "0xC6C01B"
+      button_bubble_back_color: "0x82AFAF23"
+      button_foreground_color: "0xF5F100"
+      button_pressed_foreground_color: "0xFFFFFF"
+      button_swipe_foreground_color: "0xA5A5A5"
+      font_size: 17
+      swipe_font_size: 8
+      corner_radius: 10
+      border_color: "0x0F000000"
+      text_color: "0xFAFAFA"
+      lower_edge_color: "0x05000000"
+      shadow_color: "0x000000"
+      shadow_size: 2
+      hilited_candidate_back_color: "0xC6C01B"
+      hilited_candidate_text_color: "0xFFFFFF"
+      hilited_candidate_label_color: "0x606060"
+      hilited_comment_text_color: "0x606060"
+      candidate_text_color: "0xFAFAFA"
+      comment_text_color: "0xFAFAFA"
+      label_color: "0xFAFAFA"
+      hilited_callout_back_color: "0x01FAFAFA"
+      hilited_callout_foreground_color: "0x051E82F8"

@@ -1,0 +1,3266 @@
+customKeyStyles:
+  backspace: &a2
+    name: backspace
+    buttonBackgroundColor: "0x7554FD"
+    pressedButtonBackgroundColor: "0x7554D1"
+    buttonForegroundColor: "0xFFFFFF"
+    pressedButtonForegroundColor: "0xFFFFFF"
+    swipeForegroundColor: "0xFFFFFF"
+    pressedSwipeForegroundColor: "0xDCFFFFFF"
+    cornerRadius: 11
+    borderSize: 0
+    borderColor: "0x01000000"
+    lowerEdgeColor: "0x01474747"
+    shadowColor: "0x474747"
+    shadowSize: 2
+    fontSize: 17
+  cn_en: &a5
+    name: cn_en
+    buttonBackgroundColor: "0xFDFDFD"
+    pressedButtonBackgroundColor: "0xEFEFEF"
+    buttonForegroundColor: "0x696969"
+    pressedButtonForegroundColor: "0x696969"
+    swipeForegroundColor: "0x696969"
+    pressedSwipeForegroundColor: "0x696969"
+    cornerRadius: 11
+    borderSize: 0
+    borderColor: "0x01000000"
+    lowerEdgeColor: "0x01000000"
+    shadowColor: "0x474747"
+    shadowSize: 2
+    fontSize: 15
+  enter: &a6
+    name: enter
+    buttonBackgroundColor: "0xF069D3FD"
+    pressedButtonBackgroundColor: "0x57B1D4"
+    buttonForegroundColor: "0x7554FD"
+    pressedButtonForegroundColor: "0x7554FD"
+    swipeForegroundColor: "0xFFFFFF"
+    pressedSwipeForegroundColor: "0xFFFFFF"
+    cornerRadius: 11
+    borderSize: 0
+    borderColor: "0x01000000"
+    lowerEdgeColor: "0x01000000"
+    shadowColor: "0x474747"
+    shadowSize: 2
+    fontSize: 16
+  number: &a3
+    name: number
+    buttonBackgroundColor: "0xFDFDFD"
+    pressedButtonBackgroundColor: "0xEFEFEF"
+    buttonForegroundColor: "0x696969"
+    pressedButtonForegroundColor: "0x696969"
+    swipeForegroundColor: "0x696969"
+    pressedSwipeForegroundColor: "0x696969"
+    cornerRadius: 11
+    borderSize: 0
+    borderColor: "0x01000000"
+    lowerEdgeColor: "0x01000000"
+    shadowColor: "0x474747"
+    shadowSize: 2
+    fontSize: 16
+  number+-: &a7
+    name: number+-
+    buttonBackgroundColor: "0xFDFDFD"
+    pressedButtonBackgroundColor: "0xEFEFEF"
+    buttonForegroundColor: "0x696969"
+    pressedButtonForegroundColor: "0x696969"
+    swipeForegroundColor: "0x696969"
+    pressedSwipeForegroundColor: "0x696969"
+    cornerRadius: 8
+    borderSize: 1
+    borderColor: "0x01000000"
+    lowerEdgeColor: "0x01000000"
+    shadowColor: "0x474747"
+    shadowSize: 2
+    fontSize: 19
+    swipeFontSize: 1
+  shift: &a1
+    name: shift
+    buttonBackgroundColor: "0x69D3FD"
+    pressedButtonBackgroundColor: "0x57B1D4"
+    buttonForegroundColor: "0x5D6064"
+    pressedButtonForegroundColor: "0x5D6064"
+    swipeForegroundColor: "0x696969"
+    pressedSwipeForegroundColor: "0x696969"
+    cornerRadius: 11
+    borderSize: 0
+    borderColor: "0x01000000"
+    lowerEdgeColor: "0x01000000"
+    shadowColor: "0x474747"
+    shadowSize: 2
+    fontSize: 16
+  space: &a4
+    name: space
+    buttonBackgroundColor: "0xFF9960"
+    pressedButtonBackgroundColor: "0xB38447"
+    buttonForegroundColor: "0xFFFFFF"
+    pressedButtonForegroundColor: "0xFFFFFF"
+    swipeForegroundColor: "0xFFFFFF"
+    pressedSwipeForegroundColor: "0xFFFFFF"
+    cornerRadius: 11
+    borderSize: 0
+    borderColor: "0x01000000"
+    lowerEdgeColor: "0x01000000"
+    shadowColor: "0x474747"
+    shadowSize: 2
+    fontSize: 16
+    swipeFontSize: 8
+keyboards:
+  - name: 渐变中文🍃
+    isPrimary: true
+    rows:
+      - keys:
+          - action:
+              character:
+                char: q
+            width: available
+            label: Q
+            swipe:
+              - action:
+                  character:
+                    char: "1"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "1"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: w
+            width: available
+            label: W
+            swipe:
+              - action:
+                  character:
+                    char: "2"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "2"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: e
+            width: available
+            label: E
+            swipe:
+              - action:
+                  character:
+                    char: "3"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "3"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: r
+            width: available
+            label: R
+            swipe:
+              - action:
+                  character:
+                    char: "4"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "4"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: t
+            width: available
+            label: T
+            swipe:
+              - action:
+                  character:
+                    char: "5"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "5"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: y
+            width: available
+            label: Y
+            swipe:
+              - action:
+                  character:
+                    char: "6"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "6"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: u
+            width: available
+            label: U
+            swipe:
+              - action:
+                  character:
+                    char: "7"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "7"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: i
+            width: available
+            label: I
+            swipe:
+              - action:
+                  character:
+                    char: "8"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "8"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: o
+            width: available
+            label: O
+            swipe:
+              - action:
+                  character:
+                    char: "9"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "9"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: p
+            width: available
+            label: P
+            swipe:
+              - action:
+                  character:
+                    char: "0"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "0"
+                display: true
+                processByRIME: true
+                direction: down
+      - keys:
+          - action: none
+            width:
+              percentage: 0.05
+          - action:
+              character:
+                char: a
+            width: available
+            label: A
+            swipe:
+              - action:
+                  character:
+                    char: "~"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "`"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: s
+            width: available
+            label: S
+            swipe:
+              - action:
+                  character:
+                    char: /
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: /
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: d
+            width: available
+            label: D
+            swipe:
+              - action:
+                  character:
+                    char: ":"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ":"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: f
+            width: available
+            label: F
+            swipe:
+              - action:
+                  character:
+                    char: ;
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ;
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: g
+            width: available
+            label: G
+            swipe:
+              - action:
+                  character:
+                    char: (
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: (
+                label: ◁ ▷
+                display: true
+                processByRIME: true
+                direction: down
+              - action:
+                  shortcutCommand: "#左手模式"
+                display: true
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#右手模式"
+                display: true
+                processByRIME: true
+                direction: right
+          - action:
+              character:
+                char: h
+            width: available
+            label: H
+            swipe:
+              - action:
+                  character:
+                    char: )
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: )
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: j
+            width: available
+            label: J
+            swipe:
+              - action:
+                  character:
+                    char: "@"
+                label: "@"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "?"
+                label: "?"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: k
+            width: available
+            label: K
+            swipe:
+              - action:
+                  symbol:
+                    char: “
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: '"'
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: l
+            width: available
+            label: L
+            swipe:
+              - action:
+                  symbol:
+                    char: ”
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ”
+                display: true
+                processByRIME: true
+                direction: down
+          - action: none
+            width:
+              percentage: 0.05
+      - keys:
+          - action: shift
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            swipe:
+              - action: tab
+                display: false
+                processByRIME: true
+                direction: up
+              - action: tab
+                display: true
+                processByRIME: true
+                direction: down
+            lightModeStyle: *a1
+            darkModeStyle: *a1
+          - action: none
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action:
+              character:
+                char: z
+            width: available
+            label: Z
+            swipe:
+              - action:
+                  shortcutCommand: "#行首"
+                label: 󰞓
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "-"
+                label: "-"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: x
+            width: available
+            label: X
+            swipe:
+              - action:
+                  shortcutCommand: "#剪切"
+                label: 󰆐
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: _
+                label: _
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: c
+            width: available
+            label: C
+            swipe:
+              - action:
+                  shortcutCommand: "#复制"
+                label: 
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "#"
+                label: "#"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: v
+            width: available
+            label: V
+            swipe:
+              - action:
+                  shortcutCommand: "#粘贴"
+                label: 󰆒
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ，
+                label: ，
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: b
+            width: available
+            label: B
+            swipe:
+              - action:
+                  shortcutCommand: "#RimeSwitcher"
+                label: 󰟡
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: .
+                label: .
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: n
+            width: available
+            label: N
+            swipe:
+              - action:
+                  shortcutCommand: "#换行"
+                label: 
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "!"
+                label: "!"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: m
+            width: available
+            label: M
+            swipe:
+              - action:
+                  shortcutCommand: "#行尾"
+                label: 󰞔
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "~"
+                label: "~"
+                display: true
+                processByRIME: true
+                direction: down
+          - action: none
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action: backspace
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            label: 󰗨
+            swipe:
+              - action:
+                  keyboardType: 渐变中文无符🍃
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  shortcutCommand: "#重输"
+                display: false
+                processByRIME: true
+                direction: left
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+      - keys:
+          - action:
+              keyboardType: 渐变中文数字符号🍃
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.2
+            label: 符
+            swipe:
+              - action:
+                  keyboardType: classifySymbolic
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  keyboardType: emojis
+                display: true
+                processByRIME: true
+                direction: down
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+          - action:
+              keyboardType: 渐变中文数字🍃
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: "123"
+            swipe:
+              - action:
+                  shortcutCommand: "#三选上屏"
+                display: false
+                processByRIME: true
+                direction: up
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action: space
+            width:
+              portrait: available
+              landscape:
+                percentage: 0.4
+            swipe:
+              - action:
+                  shortcutCommand: "#左移"
+                display: true
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#右移"
+                display: true
+                processByRIME: true
+                direction: right
+            lightModeStyle: *a4
+            darkModeStyle: *a4
+          - action:
+              keyboardType: 渐变英文🍃
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: 中/英
+            swipe:
+              - action:
+                  shortcutCommand: "#次选上屏"
+                display: false
+                processByRIME: true
+                direction: up
+            lightModeStyle: *a5
+            darkModeStyle: *a5
+          - action: enter
+            width:
+              portrait:
+                percentage: 0.23
+              landscape:
+                percentage: 0.2
+            label:  确认
+            swipe:
+              - action:
+                  keyboardType: 渐变助记🍃
+                display: false
+                processByRIME: true
+                direction: up
+            lightModeStyle: *a6
+            darkModeStyle: *a6
+      - keys:
+          - action: none
+            processByRIME: false
+            width: available
+        rowHeight: 10
+    buttonInsets:
+      left: 3
+      bottom: 4
+      top: 4
+      right: 3
+  - name: 渐变中文数字🍃
+    isPrimary: true
+    rows:
+      - keys:
+          - action:
+              character:
+                char: +
+            width:
+              percentage: 0.1
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: "-"
+            width:
+              percentage: 0.1
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: "1"
+            width: available
+          - action:
+              character:
+                char: "2"
+            width: available
+          - action:
+              character:
+                char: "3"
+            width: available
+          - action:
+              character:
+                char: =
+            width: available
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+      - keys:
+          - action:
+              character:
+                char: "*"
+            width:
+              percentage: 0.1
+            label: ×
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: /
+            width:
+              percentage: 0.1
+            label: ÷
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: "4"
+            width: available
+          - action:
+              character:
+                char: "5"
+            width: available
+          - action:
+              character:
+                char: "6"
+            width: available
+          - action:
+              character:
+                char: ":"
+            width: available
+            lightModeStyle: *a1
+            darkModeStyle: *a1
+      - keys:
+          - action:
+              character:
+                char: (
+            width:
+              percentage: 0.1
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: )
+            width:
+              percentage: 0.1
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: "7"
+            width: available
+          - action:
+              character:
+                char: "8"
+            width: available
+          - action:
+              character:
+                char: "9"
+            width: available
+          - action: backspace
+            width: available
+            label: 󰗨
+            lightModeStyle: *a4
+            darkModeStyle: *a4
+      - keys:
+          - action:
+              keyboardType: 渐变中文🍃
+            width: available
+            label: 中
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+          - action:
+              character:
+                char: .
+            width: available
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action:
+              character:
+                char: "0"
+            width: available
+          - action: space
+            width: available
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action: enter
+            width: available
+            label: 
+            lightModeStyle: *a6
+            darkModeStyle: *a6
+      - keys:
+          - action: none
+            width: available
+        rowHeight: 10
+    buttonInsets:
+      left: 3
+      bottom: 4
+      top: 4
+      right: 3
+  - name: 渐变英文🍃
+    isPrimary: true
+    rows:
+      - keys:
+          - action:
+              character:
+                char: q
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "1"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: w
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "2"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: e
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "3"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: r
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "4"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: t
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "5"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: y
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "6"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: u
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "7"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: i
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "8"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: o
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "9"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: p
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  character:
+                    char: "0"
+                display: true
+                processByRIME: false
+                direction: up
+      - keys:
+          - action: none
+            processByRIME: false
+            width:
+              percentage: 0.05
+          - action:
+              character:
+                char: a
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: "~"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: s
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: /
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: d
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: ":"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: f
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: ;
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: g
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: (
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: h
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: )
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: j
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: "@"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: k
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: '"'
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: l
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: "'"
+                display: true
+                processByRIME: false
+                direction: up
+          - action: none
+            processByRIME: false
+            width:
+              percentage: 0.05
+      - keys:
+          - action: shift
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            swipe:
+              - action: tab
+                display: false
+                processByRIME: false
+                direction: up
+              - action: tab
+                display: true
+                processByRIME: true
+                direction: down
+            lightModeStyle: *a1
+            darkModeStyle: *a1
+          - action: none
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action:
+              character:
+                char: z
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: "-"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: x
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: _
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: c
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: "#"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: v
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: "?"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: b
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: "!"
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: n
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: ","
+                display: true
+                processByRIME: false
+                direction: up
+          - action:
+              character:
+                char: m
+            processByRIME: false
+            width: available
+            swipe:
+              - action:
+                  symbol:
+                    char: .
+                display: true
+                processByRIME: false
+                direction: up
+          - action: none
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action: backspace
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            label: 󰗨
+            swipe:
+              - action:
+                  shortcutCommand: "#重输"
+                display: false
+                processByRIME: true
+                direction: left
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+      - keys:
+          - action:
+              keyboardType: 渐变英文数字符号🍃
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.2
+            label: 符
+            swipe:
+              - action:
+                  keyboardType: classifySymbolic
+                display: false
+                processByRIME: false
+                direction: up
+              - action:
+                  keyboardType: emojis
+                display: false
+                processByRIME: false
+                direction: down
+              - action:
+                  shortcutCommand: "#上个输入方案"
+                display: false
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#上个输入方案"
+                display: false
+                processByRIME: true
+                direction: right
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+          - action:
+              keyboardType: 渐变英文数字🍃
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: "123"
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action: space
+            processByRIME: false
+            width:
+              portrait: available
+              landscape:
+                percentage: 0.4
+            swipe:
+              - action:
+                  shortcutCommand: "#左移"
+                display: true
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#右移"
+                display: true
+                processByRIME: true
+                direction: right
+            lightModeStyle: *a4
+            darkModeStyle: *a4
+          - action:
+              keyboardType: 渐变中文🍃
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: 英/中
+            lightModeStyle: *a5
+            darkModeStyle: *a5
+          - action: enter
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.23
+              landscape:
+                percentage: 0.2
+            label:  确认
+            lightModeStyle: *a6
+            darkModeStyle: *a6
+      - keys:
+          - action: none
+            width: available
+        rowHeight: 10
+    buttonInsets:
+      left: 3
+      bottom: 4
+      top: 4
+      right: 3
+  - name: 渐变中文数字符号🍃
+    isPrimary: false
+    rows:
+      - keys:
+          - action:
+              character:
+                char: "1"
+            width: available
+          - action:
+              character:
+                char: "2"
+            width: available
+          - action:
+              character:
+                char: "3"
+            width: available
+          - action:
+              character:
+                char: "4"
+            width: available
+          - action:
+              character:
+                char: "5"
+            width: available
+          - action:
+              character:
+                char: "6"
+            width: available
+          - action:
+              character:
+                char: "7"
+            width: available
+          - action:
+              character:
+                char: "8"
+            width: available
+          - action:
+              character:
+                char: "9"
+            width: available
+          - action:
+              character:
+                char: "0"
+            width: available
+      - keys:
+          - action:
+              character:
+                char: "~"
+            width: available
+          - action:
+              character:
+                char: /
+            width: available
+          - action:
+              character:
+                char: ":"
+            width: available
+          - action:
+              character:
+                char: ;
+            width: available
+          - action:
+              character:
+                char: (
+            width: available
+          - action:
+              character:
+                char: )
+            width: available
+          - action:
+              character:
+                char: "&"
+            width: available
+          - action:
+              character:
+                char: "@"
+            width: available
+          - action:
+              symbol:
+                char: “
+            width: available
+          - action:
+              character:
+                char: ”
+            width: available
+      - keys:
+          - action:
+              keyboardType: classifySymbolic
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            lightModeStyle: *a1
+            darkModeStyle: *a1
+          - action: none
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action:
+              character:
+                char: "-"
+            width: available
+          - action:
+              character:
+                char: _
+            width: available
+          - action:
+              character:
+                char: "#"
+            width: available
+          - action:
+              character:
+                char: "?"
+            width: available
+          - action:
+              character:
+                char: "!"
+            width: available
+          - action:
+              character:
+                char: ","
+            width: available
+          - action:
+              character:
+                char: .
+            width: available
+          - action: none
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action: backspace
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            label: 󰗨
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+      - keys:
+          - action:
+              keyboardType: 渐变中文🍃
+            width:
+              portrait:
+                percentage: 0.14
+              landscape: available
+            label: ABC
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+          - action:
+              keyboardType: 渐变中文数字🍃
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: "123"
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action: space
+            width:
+              portrait: available
+              landscape:
+                percentage: 0.5
+            swipe:
+              - action:
+                  shortcutCommand: "#左移"
+                display: true
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#右移"
+                display: true
+                processByRIME: true
+                direction: right
+            lightModeStyle: *a4
+            darkModeStyle: *a4
+          - action:
+              keyboardType: 渐变英文数字符号🍃
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: 全/半
+            lightModeStyle: *a5
+            darkModeStyle: *a5
+          - action: enter
+            width:
+              portrait:
+                percentage: 0.23
+              landscape: available
+            label:  确认
+            lightModeStyle: *a6
+            darkModeStyle: *a6
+      - keys:
+          - action: none
+            width: available
+        rowHeight: 10
+    buttonInsets:
+      left: 3
+      bottom: 4
+      top: 4
+      right: 3
+  - name: 渐变英文数字符号🍃
+    isPrimary: false
+    rows:
+      - keys:
+          - action:
+              character:
+                char: "1"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "2"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "3"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "4"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "5"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "6"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "7"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "8"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "9"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "0"
+            processByRIME: false
+            width: available
+      - keys:
+          - action:
+              symbol:
+                char: "~"
+            processByRIME: false
+            width: available
+          - action:
+              symbol:
+                char: /
+            processByRIME: false
+            width: available
+          - action:
+              symbol:
+                char: ":"
+            processByRIME: false
+            width: available
+          - action:
+              symbol:
+                char: ;
+            processByRIME: false
+            width: available
+          - action:
+              symbol:
+                char: (
+            processByRIME: false
+            width: available
+          - action:
+              symbol:
+                char: )
+            processByRIME: false
+            width: available
+          - action:
+              symbol:
+                char: "&"
+            processByRIME: false
+            width: available
+          - action:
+              symbol:
+                char: "@"
+            processByRIME: false
+            width: available
+          - action:
+              symbol:
+                char: '"'
+            processByRIME: false
+            width: available
+          - action:
+              symbol:
+                char: "'"
+            processByRIME: false
+            width: available
+      - keys:
+          - action:
+              keyboardType: classifySymbolic
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            lightModeStyle: *a1
+            darkModeStyle: *a1
+          - action: none
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action:
+              character:
+                char: "-"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: _
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "#"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "?"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: "!"
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: ","
+            processByRIME: false
+            width: available
+          - action:
+              character:
+                char: .
+            processByRIME: false
+            width: available
+          - action: none
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action: backspace
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            label: 󰗨
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+      - keys:
+          - action:
+              keyboardType: 渐变英文🍃
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.14
+              landscape: available
+            label: ABC
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+          - action:
+              keyboardType: 渐变英文数字🍃
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: "123"
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action: space
+            processByRIME: false
+            width:
+              portrait: available
+              landscape:
+                percentage: 0.5
+            swipe:
+              - action:
+                  shortcutCommand: "#左移"
+                display: true
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#右移"
+                display: true
+                processByRIME: true
+                direction: right
+            lightModeStyle: *a4
+            darkModeStyle: *a4
+          - action:
+              keyboardType: 渐变中文数字符号🍃
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: 半/全
+            lightModeStyle: *a5
+            darkModeStyle: *a5
+          - action: enter
+            processByRIME: false
+            width:
+              portrait:
+                percentage: 0.23
+              landscape: available
+            label:  确认
+            lightModeStyle: *a6
+            darkModeStyle: *a6
+      - keys:
+          - action: none
+            width: available
+        rowHeight: 10
+    buttonInsets:
+      left: 3
+      bottom: 4
+      top: 4
+      right: 3
+  - name: 渐变助记🍃
+    isPrimary: true
+    rows:
+      - keys:
+          - action:
+              character:
+                char: q
+            width: available
+            label: Q
+            swipe:
+              - action:
+                  character:
+                    char: "1"
+                label: "1"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  symbol:
+                    char: "1"
+                label: iu
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: w
+            width: available
+            label: W
+            swipe:
+              - action:
+                  character:
+                    char: "2"
+                label: "2"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "2"
+                label: ei
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: e
+            width: available
+            label: E
+            swipe:
+              - action:
+                  character:
+                    char: "3"
+                label: "3"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "3"
+                label: e
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: r
+            width: available
+            label: R
+            swipe:
+              - action:
+                  character:
+                    char: "4"
+                label: "4"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "4"
+                label: uan
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: t
+            width: available
+            label: T
+            swipe:
+              - action:
+                  character:
+                    char: "5"
+                label: "5"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "5"
+                label: ue üe
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: y
+            width: available
+            label: Y
+            swipe:
+              - action:
+                  character:
+                    char: "6"
+                label: "6"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "6"
+                label: un
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: u
+            width: available
+            label: U
+            swipe:
+              - action:
+                  character:
+                    char: "7"
+                label: "7"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "7"
+                label: sh
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: i
+            width: available
+            label: I
+            swipe:
+              - action:
+                  character:
+                    char: "8"
+                label: "8"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "8"
+                label: ch
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: o
+            width: available
+            label: O
+            swipe:
+              - action:
+                  character:
+                    char: "9"
+                label: "9"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "9"
+                label: uo o
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: p
+            width: available
+            label: P
+            swipe:
+              - action:
+                  character:
+                    char: "0"
+                label: "0"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "0"
+                label: ie
+                display: true
+                processByRIME: true
+                direction: down
+      - keys:
+          - action: none
+            width:
+              percentage: 0.05
+          - action:
+              character:
+                char: a
+            width: available
+            label: A
+            swipe:
+              - action:
+                  character:
+                    char: "~"
+                label: "~"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "`"
+                label: a `
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: s
+            width: available
+            label: S
+            swipe:
+              - action:
+                  character:
+                    char: /
+                label: ong
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: /
+                label: iong /
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: d
+            width: available
+            label: D
+            swipe:
+              - action:
+                  character:
+                    char: ":"
+                label: ":"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ":"
+                label: ai
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: f
+            width: available
+            label: F
+            swipe:
+              - action:
+                  character:
+                    char: ;
+                label: ;
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ;
+                label: en
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: g
+            width: available
+            label: G
+            swipe:
+              - action:
+                  character:
+                    char: (
+                label: (
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: (
+                label: eng
+                display: true
+                processByRIME: true
+                direction: down
+              - action:
+                  shortcutCommand: "#左手模式"
+                display: true
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#右手模式"
+                display: true
+                processByRIME: true
+                direction: right
+          - action:
+              character:
+                char: h
+            width: available
+            label: H
+            swipe:
+              - action:
+                  character:
+                    char: )
+                label: )
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: )
+                label: ang
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: j
+            width: available
+            label: J
+            swipe:
+              - action:
+                  character:
+                    char: "@"
+                label: "?"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "?"
+                label: an
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: k
+            width: available
+            label: K
+            swipe:
+              - action:
+                  symbol:
+                    char: '"'
+                label: '"'
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: “
+                label: uai ing
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: l
+            width: available
+            label: L
+            swipe:
+              - action:
+                  symbol:
+                    char: ”
+                label: uang
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ”
+                label: iang “
+                display: true
+                processByRIME: true
+                direction: down
+          - action: none
+            width:
+              percentage: 0.05
+      - keys:
+          - action: shift
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            swipe:
+              - action: tab
+                display: false
+                processByRIME: true
+                direction: up
+              - action: tab
+                display: false
+                processByRIME: true
+                direction: down
+            lightModeStyle: *a1
+            darkModeStyle: *a1
+          - action: none
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action:
+              character:
+                char: z
+            width: available
+            label: Z
+            swipe:
+              - action:
+                  shortcutCommand: "#行首"
+                label: "-"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "-"
+                label: ou
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: x
+            width: available
+            label: X
+            swipe:
+              - action:
+                  shortcutCommand: "#剪切"
+                label: _
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: _
+                label: ua ia
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: c
+            width: available
+            label: C
+            swipe:
+              - action:
+                  shortcutCommand: "#复制"
+                label: 
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "#"
+                label: "ao #"
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: v
+            width: available
+            label: V
+            swipe:
+              - action:
+                  shortcutCommand: "#粘贴"
+                label: 󰆒
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ","
+                label: ui ü
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: b
+            width: available
+            label: B
+            swipe:
+              - action:
+                  shortcutCommand: "#RimeSwitcher"
+                label: .
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: .
+                label: in
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: n
+            width: available
+            label: N
+            swipe:
+              - action:
+                  shortcutCommand: "#换行"
+                label: "!"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "!"
+                label: iao
+                display: true
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: m
+            width: available
+            label: M
+            swipe:
+              - action:
+                  shortcutCommand: "#行尾"
+                label: "~"
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "~"
+                label: ian
+                display: true
+                processByRIME: true
+                direction: down
+          - action: none
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action: backspace
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            label: 󰗨
+            swipe:
+              - action:
+                  keyboardType: 渐变中文无符🍃
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  shortcutCommand: "#重输"
+                display: false
+                processByRIME: true
+                direction: left
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+      - keys:
+          - action:
+              keyboardType: 渐变中文数字符号🍃
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.2
+            label: 符
+            swipe:
+              - action:
+                  keyboardType: classifySymbolic
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  keyboardType: emojis
+                display: false
+                processByRIME: true
+                direction: down
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+          - action:
+              keyboardType: 渐变中文数字🍃
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: "123"
+            swipe:
+              - action:
+                  shortcutCommand: "#三选上屏"
+                display: false
+                processByRIME: true
+                direction: up
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action: space
+            width:
+              portrait: available
+              landscape:
+                percentage: 0.4
+            swipe:
+              - action:
+                  shortcutCommand: "#左移"
+                display: true
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#右移"
+                display: true
+                processByRIME: true
+                direction: right
+            lightModeStyle: *a4
+            darkModeStyle: *a4
+          - action:
+              keyboardType: 渐变英文🍃
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: 中/英
+            swipe:
+              - action:
+                  shortcutCommand: "#次选上屏"
+                display: false
+                processByRIME: true
+                direction: up
+            lightModeStyle: *a5
+            darkModeStyle: *a5
+          - action: enter
+            width:
+              portrait:
+                percentage: 0.23
+              landscape:
+                percentage: 0.2
+            label:  确认
+            swipe:
+              - action:
+                  keyboardType: 渐变中文🍃
+                display: false
+                processByRIME: true
+                direction: up
+            lightModeStyle: *a6
+            darkModeStyle: *a6
+      - keys:
+          - action: none
+            processByRIME: false
+            width: available
+        rowHeight: 10
+    buttonInsets:
+      left: 3
+      bottom: 4
+      top: 4
+      right: 3
+  - name: 渐变中文无符🍃
+    isPrimary: true
+    rows:
+      - keys:
+          - action:
+              character:
+                char: q
+            width: available
+            label: Q
+            swipe:
+              - action:
+                  character:
+                    char: "1"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "1"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: w
+            width: available
+            label: W
+            swipe:
+              - action:
+                  character:
+                    char: "2"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "2"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: e
+            width: available
+            label: E
+            swipe:
+              - action:
+                  character:
+                    char: "3"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "3"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: r
+            width: available
+            label: R
+            swipe:
+              - action:
+                  character:
+                    char: "4"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "4"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: t
+            width: available
+            label: T
+            swipe:
+              - action:
+                  character:
+                    char: "5"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "5"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: y
+            width: available
+            label: Y
+            swipe:
+              - action:
+                  character:
+                    char: "6"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "6"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: u
+            width: available
+            label: U
+            swipe:
+              - action:
+                  character:
+                    char: "7"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "7"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: i
+            width: available
+            label: I
+            swipe:
+              - action:
+                  character:
+                    char: "8"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "8"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: o
+            width: available
+            label: O
+            swipe:
+              - action:
+                  character:
+                    char: "9"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "9"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: p
+            width: available
+            label: P
+            swipe:
+              - action:
+                  character:
+                    char: "0"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "0"
+                display: false
+                processByRIME: true
+                direction: down
+      - keys:
+          - action: none
+            width:
+              percentage: 0.05
+          - action:
+              character:
+                char: a
+            width: available
+            label: A
+            swipe:
+              - action:
+                  character:
+                    char: "~"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "`"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: s
+            width: available
+            label: S
+            swipe:
+              - action:
+                  character:
+                    char: /
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: /
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: d
+            width: available
+            label: D
+            swipe:
+              - action:
+                  character:
+                    char: ":"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ":"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: f
+            width: available
+            label: F
+            swipe:
+              - action:
+                  character:
+                    char: ;
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ;
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: g
+            width: available
+            label: G
+            swipe:
+              - action:
+                  character:
+                    char: (
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: (
+                display: false
+                processByRIME: true
+                direction: down
+              - action:
+                  shortcutCommand: "#左手模式"
+                display: true
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#右手模式"
+                display: true
+                processByRIME: true
+                direction: right
+          - action:
+              character:
+                char: h
+            width: available
+            label: H
+            swipe:
+              - action:
+                  character:
+                    char: )
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: )
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: j
+            width: available
+            label: J
+            swipe:
+              - action:
+                  character:
+                    char: "@"
+                label: "@"
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "?"
+                label: "?"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: k
+            width: available
+            label: K
+            swipe:
+              - action:
+                  symbol:
+                    char: “
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: “
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: l
+            width: available
+            label: L
+            swipe:
+              - action:
+                  symbol:
+                    char: ”
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ”
+                display: false
+                processByRIME: true
+                direction: down
+          - action: none
+            width:
+              percentage: 0.05
+      - keys:
+          - action: shift
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            swipe:
+              - action: tab
+                display: false
+                processByRIME: true
+                direction: up
+              - action: tab
+                display: false
+                processByRIME: true
+                direction: down
+            lightModeStyle: *a1
+            darkModeStyle: *a1
+          - action: none
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action:
+              character:
+                char: z
+            width: available
+            label: Z
+            swipe:
+              - action:
+                  shortcutCommand: "#行首"
+                label: ⇤
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "-"
+                label: "-"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: x
+            width: available
+            label: X
+            swipe:
+              - action:
+                  shortcutCommand: "#剪切"
+                label: 󰆐
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: _
+                label: _
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: c
+            width: available
+            label: C
+            swipe:
+              - action:
+                  shortcutCommand: "#复制"
+                label: 
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "#"
+                label: "#"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: v
+            width: available
+            label: V
+            swipe:
+              - action:
+                  shortcutCommand: "#粘贴"
+                label: 󰆒
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: ","
+                label: ","
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: b
+            width: available
+            label: B
+            swipe:
+              - action:
+                  shortcutCommand: "#RimeSwitcher"
+                label: 󰟡
+                display: true
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: .
+                label: .
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: n
+            width: available
+            label: N
+            swipe:
+              - action:
+                  shortcutCommand: "#换行"
+                label: 
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "!"
+                label: "!"
+                display: false
+                processByRIME: true
+                direction: down
+          - action:
+              character:
+                char: m
+            width: available
+            label: M
+            swipe:
+              - action:
+                  shortcutCommand: "#行尾"
+                label: ⇥
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  character:
+                    char: "~"
+                label: "~"
+                display: false
+                processByRIME: true
+                direction: down
+          - action: none
+            width:
+              portrait:
+                percentage: 0.01
+              landscape:
+                percentage: 0.02
+          - action: backspace
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.13
+            label: 󰗨
+            swipe:
+              - action:
+                  keyboardType: 渐变中文🍃
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  shortcutCommand: "#重输"
+                display: false
+                processByRIME: true
+                direction: left
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+      - keys:
+          - action:
+              keyboardType: 渐变中文数字符号🍃
+            width:
+              portrait:
+                percentage: 0.14
+              landscape:
+                percentage: 0.2
+            label: 符
+            swipe:
+              - action:
+                  keyboardType: classifySymbolic
+                display: false
+                processByRIME: true
+                direction: up
+              - action:
+                  keyboardType: emojis
+                display: false
+                processByRIME: true
+                direction: down
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+          - action:
+              keyboardType: 渐变中文数字🍃
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: "123"
+            swipe:
+              - action:
+                  shortcutCommand: "#三选上屏"
+                display: false
+                processByRIME: true
+                direction: up
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action: space
+            width:
+              portrait: available
+              landscape:
+                percentage: 0.4
+            swipe:
+              - action:
+                  shortcutCommand: "#左移"
+                display: true
+                processByRIME: true
+                direction: left
+              - action:
+                  shortcutCommand: "#右移"
+                display: true
+                processByRIME: true
+                direction: right
+            lightModeStyle: *a4
+            darkModeStyle: *a4
+          - action:
+              keyboardType: 渐变英文🍃
+            width:
+              portrait:
+                percentage: 0.13
+              landscape: available
+            label: 中/英
+            swipe:
+              - action:
+                  shortcutCommand: "#次选上屏"
+                display: false
+                processByRIME: true
+                direction: up
+            lightModeStyle: *a5
+            darkModeStyle: *a5
+          - action: enter
+            width:
+              portrait:
+                percentage: 0.23
+              landscape:
+                percentage: 0.2
+            label:  确认
+            swipe:
+              - action:
+                  keyboardType: 渐变助记🍃
+                display: false
+                processByRIME: true
+                direction: up
+            lightModeStyle: *a6
+            darkModeStyle: *a6
+      - keys:
+          - action: none
+            processByRIME: false
+            width: available
+        rowHeight: 10
+    buttonInsets:
+      left: 3
+      bottom: 4
+      top: 4
+      right: 3
+  - name: 渐变英文数字🍃
+    isPrimary: true
+    rows:
+      - keys:
+          - action:
+              character:
+                char: +
+            width:
+              percentage: 0.1
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: "-"
+            width:
+              percentage: 0.1
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: "1"
+            width: available
+          - action:
+              character:
+                char: "2"
+            width: available
+          - action:
+              character:
+                char: "3"
+            width: available
+          - action:
+              character:
+                char: =
+            width: available
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+      - keys:
+          - action:
+              character:
+                char: "*"
+            width:
+              percentage: 0.1
+            label: ×
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: /
+            width:
+              percentage: 0.1
+            label: ÷
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: "4"
+            width: available
+          - action:
+              character:
+                char: "5"
+            width: available
+          - action:
+              character:
+                char: "6"
+            width: available
+          - action:
+              character:
+                char: ":"
+            width: available
+            lightModeStyle: *a1
+            darkModeStyle: *a1
+      - keys:
+          - action:
+              character:
+                char: (
+            width:
+              percentage: 0.1
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: )
+            width:
+              percentage: 0.1
+            lightModeStyle: *a7
+            darkModeStyle: *a7
+          - action:
+              character:
+                char: "7"
+            width: available
+          - action:
+              character:
+                char: "8"
+            width: available
+          - action:
+              character:
+                char: "9"
+            width: available
+          - action: backspace
+            width: available
+            label: 󰗨
+            lightModeStyle: *a4
+            darkModeStyle: *a4
+      - keys:
+          - action:
+              keyboardType: 渐变英文🍃
+            width: available
+            label: 英
+            lightModeStyle: *a2
+            darkModeStyle: *a2
+          - action:
+              character:
+                char: .
+            width: available
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action:
+              character:
+                char: "0"
+            width: available
+          - action: space
+            width: available
+            lightModeStyle: *a3
+            darkModeStyle: *a3
+          - action: enter
+            width: available
+            label: 
+            lightModeStyle: *a6
+            darkModeStyle: *a6
+      - keys:
+          - action: none
+            width: available
+        rowHeight: 10
+    buttonInsets:
+      left: 3
+      bottom: 4
+      top: 4
+      right: 3
