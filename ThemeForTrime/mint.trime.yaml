@@ -1,0 +1,3350 @@
+# Trime style settings
+# encoding: utf-8
+
+config_version: '2.5'
+name: 薄荷输入法 #方案名称
+author: 'Mintimate <mintimate215@gmail.com>' #作者资讯
+
+conf:
+  # 主键盘
+  main:
+    height: 52 #按键高度
+    horizontal_gap: 3 #按键水平间距
+    vertical_gap: 5 #按键行距
+    key_symbol_offset_x: 3
+    key_hint_offset_y: -1.3
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    keys/+:
+      - width: 100 #底部留白开关，0为关，1~100开
+        height: 6 #底部留白
+  key_height_last: # 第4行 按键高度
+    height: 50
+  # 数字、编辑、功能键盘配置
+  num:
+    height: 60 #按键高度
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    round_corner: 0
+    keys/+:
+      - width: 0 #底部留白开关
+        height: 1 #底部留白
+  # 符号、颜文字键盘
+  sym_height: 50 #按键高度
+  menu_height: 41 #菜单高度
+  sym_bottom_switch: 0 #底部留白开关
+  sym_bottom: 1 #底部留白
+  sym_long_text_size: 20 #长标签字号
+
+style:
+  __include: trime:/style
+  color_scheme: default #默认配色方案
+  horizontal: true #水平模式。改变方向键的功能 （true：方向键适配横排候选；false：方向键适配竖排候选）
+  reset_ascii_mode: false #显示键盘时重置为中文状态
+  speech_opencc_config: s2t.json #语音输入简繁转换
+  auto_caps: false #自动句首大写:true|false|ascii
+  latin_locale: en_US #西文语言
+  locale: zh_TW #预设语言 zh_TW,zh_CN,zh_HK,""
+  background_dim_amount: 0.5 #备用参数，无功能
+  keyboards: #键盘配置：自动键盘、字母、数字、符号
+    - .default
+    - symbols
+    - sym112
+    - sym121
+    - sym122
+    - sym151
+    - sym152
+    - sym153
+    - sym154
+    - sym155
+    - sym161
+    - sym162
+    - sym163
+    - sym164
+    - sym171
+    - sym172
+    - sym211
+    - sym212
+    - sym213
+    - sym221
+    - sym222
+    - sym223
+    - sym224
+    - sym225
+    - sym226
+    - sym227
+    - sym231
+    - sym232
+    - sym241
+    - sym242
+    - sym243
+    - sym244
+    - sym245
+    - sym251
+    - sym252
+    - sym253
+    - sym261
+    - sym262
+    - sym263
+    - sym264
+    - emoji1
+    - emoji2
+    - emoji3
+    - emoji4
+    - emoji5
+    - emoji6
+    - ywz11
+    - ywz12
+    - ywz21
+    - ywz22
+    - ywz31
+    - ywz32
+    - ywz41
+    - ywz42
+    - ywz51
+    - ywz52
+    - ywz61
+    - ywz62
+
+  # 候选区
+  ## 候选
+  candidate_use_cursor: true #高亮候选项
+  candidate_view_height: 33 #候选区高度
+  candidate_padding: 5 #候选项内边距
+  candidate_spacing: 2 #候选间距
+  candidate_text_size: 20 #候选字号
+  ## 编码
+  comment_on_top: false #编码提示在上方或右侧
+  comment_height: 15 #编码提示区高度
+  comment_text_size: 12 #编码提示字号
+
+  # 按键区
+  proximity_correction: true #按键纠错
+  vertical_correction: -5 #按键偏移（上偏为正）
+  horizontal_gap: 0 #键水平间距
+  vertical_gap: 0 #键盘行距
+  ## 主按键
+  key_height: { __include: conf/sym_height } #键高
+  key_width: 10.0 #键宽，占屏幕宽的百分比
+  round_corner: 1 #按键圆角半径
+  shadow_radius: 0.0 #按键阴影半径
+  key_text_size: 20 #键字号
+  key_long_text_size: 16 #长标签字号
+  symbol_text_size: 10 #符号字号
+  ## 按键提示
+  preview_height: 44 #按键提示高度
+  preview_offset: -10 #按键提示纵向偏移（下偏为正）
+  preview_text_size: 36 #按键提示字号
+
+  # 悬浮窗口
+  label_text_size: 19 #标签字号
+  #text_height: 22 #编码区高度
+  text_size: 16 #编码区字号
+
+  window: #悬浮窗口组件
+    - {start: "", composition: "%s", end: "", letter_spacing: 0.12} #letter_spacing需要Android5.0
+    - {start: "\n", label: "%s.", candidate: "%s", comment: "%s", end: ""}
+  layout: #悬浮窗口设置
+    # 整体样式
+    position: fixed #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+    movable: false #是否可移动窗口，或仅移动一次 true|false|once
+    real_margin: 0 #屏幕左右边缘和悬浮窗之间的距离
+    spacing: -1 #屏幕上下边缘或预编辑上下边缘和悬浮窗之间的距离
+    margin_x: 5 #水平边距
+    margin_y: 1 #竖直边距
+    border: 0 #边框宽度
+    round_corner: 2 #窗口圆角
+    elevation: 0 #阴影(>=Android5.0)
+    alpha: 0xff #透明度(0-255)
+    #background: background.png #颜色或者backgrounds目录下的图片文件名
+    # 样式
+    all_phrases: false #所有满足条件的词语都显示在窗口
+    min_length: 8 #最小词长
+    max_length: 15 #超过字数则换行
+    sticky_lines: 0 #固顶行数
+    max_entries: 2 #最大词条数
+    max_width: 330 #最大宽度，超过则自动换行
+    max_height: 400 #最大高度
+    min_width: 32 #最小宽度
+    min_height: 0 #最小高度
+    line_spacing: 0 #候选词的行间距(px)
+    line_spacing_multiplier: 1.1 #候选词的行间距(倍数)
+
+fallback_colors:
+  __include: trime:/fallback_colors
+  # 悬浮窗
+  border_color: back_color #悬浮窗边框
+  label_color: hilited_text_color #标签（候选序号）
+  text_back_color: back_color #编码区背景
+  # text_color:  #编码
+  hilited_back_color: back_color #高亮编码背景
+  hilited_text_color: text_color #高亮编码
+
+  # 候选栏
+  candidate_separator_color: back_color #候选分割线
+  # back_color:  #候选栏背景
+  candidate_text_color: hilited_text_color #候选文字
+  comment_text_color: candidate_text_color #提示
+  hilited_candidate_back_color: back_color #高亮候选背景
+  hilited_candidate_text_color: text_color #高亮候选文字
+  hilited_comment_text_color: hilited_candidate_text_color #高亮提示
+
+  # 键盘通用
+  keyboard_back_color: back_color #键盘背景
+  key_border_color: back_color #按键边框
+  shadow_color: back_color #按键文字阴影
+  preview_back_color: back_color #按键提示背景
+  preview_text_color: key_text_color #按键提示文字
+  key_text_color: candidate_text_color #按键文字
+  key_symbol_color: comment_text_color #按键符号
+  hilited_key_text_color: key_text_color #高亮按键文字
+  hilited_key_symbol_color: key_symbol_color #高亮按键符号
+
+  # 主键盘
+  main_back_color: back_color #按键背景 ※
+  hilited_main_back_color: back_color #高亮按键背景 ※
+  space_back_color: main_back_color #空格背景 ※
+  hilited_space_back_color: hilited_main_back_color #高亮空格背景 ※
+  off_key_back_color: hilited_main_back_color #功能键背景
+  off_key_text_color: key_text_color #功能键文字
+  off_key_symbol_color: off_key_text_color #功能键符号 高亮功能键符号※
+  hilited_off_key_back_color: main_back_color #高亮功能键背景
+  hilited_off_key_text_color: off_key_text_color #高亮功能键文字
+  on_key_back_color: hilited_off_key_back_color #shift锁定时背景
+  on_key_text_color: hilited_key_text_color #shift锁定时文字
+  hilited_on_key_back_color: off_key_back_color #高亮shift锁定时背景
+  hilited_on_key_text_color: on_key_text_color #高亮shift锁定时文字
+  enter_back_color: on_key_back_color #enter背景 ※
+  enter_text_color: on_key_text_color #enter文字 高亮enter文字※
+  enter_symbol_color: enter_text_color #enter符号 高亮enter符号※
+  hilited_enter_back_color: hilited_on_key_back_color #高亮enter背景 ※
+
+  # 附键盘
+  key_back_color: back_color #按键背景
+  hilited_key_back_color: back_color #高亮按键背景
+  off_sym_back_color: hilited_key_back_color #功能键背景 ※
+  off_sym_text_color: off_key_text_color #功能键文字 ※
+  off_sym_fy_text_color: hilited_off_sym_back_color #翻页停止箭头文字 高亮※
+  hilited_off_sym_back_color: key_back_color #高亮功能键背景 ※
+  hilited_off_sym_text_color: hilited_off_key_text_color #高亮功能键文字 ※
+  enter_sym_back_color: off_sym_back_color # enter背景 ※
+  enter_sym_text_color: on_key_text_color #enter文字 高亮enter文字※
+  hilited_enter_sym_back_color: hilited_off_sym_back_color #高亮enter背景 ※
+  menu_back_color: off_sym_back_color #菜单背景 ※
+  menu_text_color: off_sym_text_color #菜单文字 ※
+  hilited_menu_back_color: key_back_color #高亮菜单背景 ※
+  hilited_menu_text_color: enter_sym_back_color #高亮菜单文字 ※
+
+preset_color_schemes:
+  default:
+    name: 蓝水鸭／Mint Light Blue
+    author: 'Mintimate <mintimate215@gmail.com>'
+    dark_scheme: mint_dark_blue
+    # 悬浮窗
+    # border_color: back_color #悬浮窗边框
+    label_color: hilited_text_color #标签（候选序号）
+    # text_back_color: back_color #编码区背景
+    text_color: 0x5CB5AB #编码
+    # hilited_back_color: back_color #高亮编码背景
+    hilited_text_color: 0x627178 #高亮编码
+
+    # 候选栏
+    # candidate_separator_color: back_color #候选分割线
+    back_color: 0xECEFF1 #候选栏背景
+    # candidate_text_color: hilited_text_color #候选文字
+    comment_text_color: 0x808080 #提示
+    # hilited_candidate_back_color: back_color #高亮候选背景
+    hilited_candidate_text_color: 0x333333 #高亮候选文字
+    # hilited_comment_text_color: hilited_candidate_text_color #高亮提示
+
+    # 键盘通用
+    # keyboard_back_color: back_color #键盘背景
+    # key_border_color: back_color #按键边框
+    # shadow_color: back_color #按键文字阴影
+    # preview_back_color: back_color #按键提示背景
+    # preview_text_color: key_text_color #按键提示文字
+    # key_text_color: candidate_text_color #按键文字
+    key_symbol_color: 0x627178 #按键符号
+    hilited_key_text_color: 0x333333 #高亮按键文字
+    # hilited_key_symbol_color: key_symbol_color #高亮按键符号
+
+    # 主键盘
+    main_back_color: mint_light_blue/key.png #按键背景 ※
+    hilited_main_back_color: mint_light_blue/hilited_key.png #高亮按键背景 ※
+    space_back_color: mint_light_blue/space.png #空格背景 ※
+    hilited_space_back_color: mint_light_blue/hilited_space.png #高亮空格背景 ※
+    off_key_back_color: mint_light_blue/off_key.png #功能键背景
+    # off_key_text_color: key_text_color #功能键文字
+    # off_key_symbol_color: off_key_text_color #功能键符号 高亮功能键符号※
+    hilited_off_key_back_color: mint_light_blue/hilited_off_key.png #高亮功能键背景
+    # hilited_off_key_text_color: off_key_text_color #高亮功能键文字
+    on_key_back_color: mint_light_blue/shift.png #shift锁定时背景
+    on_key_text_color: 0xFFFFFF #shift锁定时文字
+    hilited_on_key_back_color: mint_light_blue/hilited_shift.png #高亮shift锁定时背景
+    # hilited_on_key_text_color: on_key_text_color #高亮shift锁定时文字
+    # enter_back_color: on_key_back_color #enter背景 ※
+    # enter_text_color: on_key_text_color #enter文字 高亮enter文字※
+    # enter_symbol_color: enter_text_color #enter符号 高亮enter符号※
+    # hilited_enter_back_color: hilited_on_key_back_color #高亮enter背景 ※
+
+    # 附键盘
+    key_back_color: 0xFBFBFC #按键背景
+    hilited_key_back_color: 0xD9DBDD #高亮按键背景
+    off_sym_back_color: 0xECEFF1 #功能键背景 ※
+    # off_sym_text_color: off_key_text_color #功能键文字 ※
+    # off_sym_fy_text_color: hilited_off_sym_back_color #翻页停止箭头文字 高亮※
+    hilited_off_sym_back_color: 0xD3D6D8 #高亮功能键背景 ※
+    # hilited_off_sym_text_color: hilited_off_key_text_color #高亮功能键文字 ※
+    enter_sym_back_color: 0x5CB5AB # enter背景 ※
+    # enter_sym_text_color: on_key_text_color #enter文字 高亮enter文字※
+    hilited_enter_sym_back_color: 0x00A39C #高亮enter背景 ※
+    # menu_back_color: off_sym_back_color #菜单背景 ※
+    # menu_text_color: off_sym_text_color #菜单文字 ※
+    # hilited_menu_back_color: key_back_color #高亮菜单背景 ※
+    # hilited_menu_text_color: enter_sym_back_color #高亮菜单文字 ※
+
+
+  mint_dark_blue:
+    name: 黑水鸭／Mint Dark Blue  #方案名称
+    author: 'Mintimate <mintimate215@gmail.com>' #作者资讯
+    light_scheme: default
+    # 悬浮窗
+    # border_color: back_color #悬浮窗边框
+    # label_color: hilited_text_color #标签（候选序号）
+    # text_back_color: back_color #编码区背景
+    text_color: 0x6EACA8 #编码
+    # hilited_back_color: back_color #高亮编码背景
+    hilited_text_color: 0xDDDDDD #高亮编码
+
+    # 候选栏
+    # candidate_separator_color: back_color #候选分割线
+    back_color: 0x263238 #候选栏背景
+    # candidate_text_color: hilited_text_color #候选文字
+    comment_text_color: 0xBBBBBB #提示
+    # hilited_candidate_back_color: back_color #高亮候选背景
+    # hilited_candidate_text_color: text_color #高亮候选文字
+    # hilited_comment_text_color: hilited_candidate_text_color #高亮提示
+
+    # 键盘通用
+    # keyboard_back_color: back_color #键盘背景
+    # key_border_color: back_color #按键边框
+    # shadow_color: back_color #按键文字阴影
+    # preview_back_color: back_color #按键提示背景
+    # preview_text_color: key_text_color #按键提示文字
+    # key_text_color: candidate_text_color #按键文字
+    # key_symbol_color: comment_text_color #按键符号
+    hilited_key_text_color: 0xFFFFFF #高亮按键文字
+    # hilited_key_symbol_color: key_symbol_color #高亮按键符号
+
+    # 主键盘
+    main_back_color: mint_dark_blue/key.png #按键背景 ※
+    hilited_main_back_color: mint_dark_blue/hilited_key.png #高亮按键背景 ※
+    space_back_color: mint_dark_blue/space.png #空格背景 ※
+    hilited_space_back_color: mint_dark_blue/hilited_space.png #高亮空格背景 ※
+    off_key_back_color: mint_dark_blue/off_key.png #功能键背景
+    # off_key_text_color: key_text_color #功能键文字
+    # off_key_symbol_color: off_key_text_color #功能键符号 高亮功能键符号※
+    hilited_off_key_back_color: mint_dark_blue/hilited_off_key.png #高亮功能键背景
+    hilited_off_key_text_color: 0xFFFFFF #高亮功能键文字
+    on_key_back_color: mint_dark_blue/shift.png #shift锁定时背景
+    # on_key_text_color: hilited_key_text_color #shift锁定时文字
+    hilited_on_key_back_color: mint_dark_blue/hilited_shift.png #高亮shift锁定时背景
+    # hilited_on_key_text_color: on_key_text_color #高亮shift锁定时文字
+    # enter_back_color: on_key_back_color #enter背景 ※
+    # enter_text_color: on_key_text_color #enter文字 高亮enter文字※
+    # enter_symbol_color: enter_text_color #enter符号 高亮enter符号※
+    # hilited_enter_back_color: hilited_on_key_back_color #高亮enter背景 ※
+
+    # 附键盘
+    key_back_color: 0x404A50 #按键背景
+    hilited_key_back_color: 0x596367 #高亮按键背景
+    off_sym_back_color: 0x313C42 #功能键背景 ※
+    # off_sym_text_color: off_key_text_color #功能键文字 ※
+    # off_sym_fy_text_color: hilited_off_sym_back_color #翻页停止箭头文字 高亮※
+    hilited_off_sym_back_color: 0x596367 #高亮功能键背景 ※
+    # hilited_off_sym_text_color: hilited_off_key_text_color #高亮功能键文字 ※
+    enter_sym_back_color: 0x6EACA8 # enter背景 ※
+    # enter_sym_text_color: on_key_text_color #enter文字 高亮enter文字※
+    hilited_enter_sym_back_color: 0x26A69A #高亮enter背景 ※
+    # menu_back_color: off_sym_back_color #菜单背景 ※
+    # menu_text_color: off_sym_text_color #菜单文字 ※
+    # hilited_menu_back_color: key_back_color #高亮菜单背景 ※
+    # hilited_menu_text_color: enter_sym_back_color #高亮菜单文字 ※
+
+# 按键样式
+styl:
+  key:
+    key_back_color: main_back_color
+    hilited_key_back_color: hilited_main_back_color
+  off_key:
+    key_symbol_color: off_key_symbol_color
+    hilited_key_symbol_color: off_key_symbol_color
+    key_symbol_offset_x: 0
+  off_func:
+    key_back_color: off_sym_back_color
+    hilited_key_back_color: hilited_off_sym_back_color
+    key_text_color: off_sym_text_color
+    hilited_key_text_color: hilited_off_sym_text_color
+
+preset_keyboards:
+  symbols:
+    name: 中文1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '，' }
+      - { click: '。' }
+      - { click: '？' }
+      - { click: '！' }
+      - { click: '：' }
+      - { click: '；' }
+      - { click: '……' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '、' }
+      - { click: '——' }
+      - { click: '“' }
+      - { click: '”' }
+      - { click: '‘' }
+      - { click: '’' }
+      - { click: '·' }
+      - { click: kb_sym11u, __include: styl/unavl_off_sym }
+      - { click: '（' }
+      - { click: '）' }
+      - { click: '《' }
+      - { click: '》' }
+      - { click: '〈' }
+      - { click: '〉' }
+      - { click: '﹁' }
+      - { click: kb_sym11d, __include: styl/off_sym }
+      - { click: '『' }
+      - { click: '』' }
+      - { click: '「' }
+      - { click: '」' }
+      - { click: '〔' }
+      - { click: '〕' }
+      - { click: '﹂' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/hilited_menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym112:
+    name: 中文2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '【' }
+      - { click: '】' }
+      - { click: '〖' }
+      - { click: '〗' }
+      - { click: '／' }
+      - { click: '＼' }
+      - { click: '｜' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '［' }
+      - { click: '］' }
+      - { click: '｛' }
+      - { click: '｝' }
+      - { click: '＃' }
+      - { click: '＆' }
+      - { click: '＊' }
+      - { click: kb_sym11u, __include: styl/off_sym }
+      - { click: '￥' }
+      - { click: '＄' }
+      - { click: '￡' }
+      - { click: '￠' }
+      - { click: '％' }
+      - { click: '｀' }
+      - { click: '～' }
+      - { click: kb_sym11d, __include: styl/unavl_off_sym }
+      - { click: '＾' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/hilited_menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym121:
+    name: 英文1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: ',' }
+      - { click: '.' }
+      - { click: '?' }
+      - { click: '!' }
+      - { click: ':' }
+      - { click: ';' }
+      - { click: '…' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '_' }
+      - { click: '-' }
+      - { click: '*' }
+      - { click: '@' }
+      - { click: "'" }
+      - { click: '"' }
+      - { click: '/' }
+      - { click: kb_sym12u, __include: styl/unavl_off_sym }
+      - { click: '+' }
+      - { click: '=' }
+      - { click: '<' }
+      - { click: '>' }
+      - { click: '(' }
+      - { click: ')' }
+      - { click: '\' }
+      - { click: kb_sym12d, __include: styl/off_sym }
+      - { click: '[' }
+      - { click: ']' }
+      - { click: '{' }
+      - { click: '}' }
+      - { click: '&' }
+      - { click: '#' }
+      - { click: '|' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/hilited_menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym122:
+    name: 英文2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '%' }
+      - { click: '$' }
+      - { click: '¥' }
+      - { click: '£' }
+      - { click: '¢' }
+      - { click: '€' }
+      - { click: '^' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '`' }
+      - { click: '~' }
+      - { click: '♀' }
+      - { click: '♂' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym12u, __include: styl/off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym12d, __include: styl/unavl_off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/hilited_menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym151:
+    name: 特殊1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '○' }
+      - { click: '◇' }
+      - { click: '□' }
+      - { click: '♢' }
+      - { click: '♡' }
+      - { click: '♤' }
+      - { click: '♧' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '●' }
+      - { click: '◆' }
+      - { click: '■' }
+      - { click: '♦' }
+      - { click: '♥' }
+      - { click: '♠' }
+      - { click: '♣' }
+      - { click: kb_sym15u1, __include: styl/unavl_off_sym }
+      - { click: '☆' }
+      - { click: '△' }
+      - { click: '▽' }
+      - { click: '☜' }
+      - { click: '☞' }
+      - { click: '♂' }
+      - { click: '♀' }
+      - { click: kb_sym15d2, __include: styl/off_sym }
+      - { click: '★' }
+      - { click: '▲' }
+      - { click: '▼' }
+      - { click: '※' }
+      - { click: '♟' }
+      - { click: '♚' }
+      - { click: '♛' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/hilited_menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym152:
+    name: 特殊2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '♞' }
+      - { click: '♝' }
+      - { click: '✘' }
+      - { click: '✔' }
+      - { click: '⇔' }
+      - { click: '↹' }
+      - { click: '↣' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '◢' }
+      - { click: '◣' }
+      - { click: '↖' }
+      - { click: '↑' }
+      - { click: '↗' }
+      - { click: '←' }
+      - { click: '→' }
+      - { click: kb_sym15u1, __include: styl/off_sym }
+      - { click: '◥' }
+      - { click: '◤' }
+      - { click: '↙' }
+      - { click: '↓' }
+      - { click: '↘' }
+      - { click: '↔' }
+      - { click: '↕' }
+      - { click: kb_sym15d3, __include: styl/off_sym }
+      - { click: '℡' }
+      - { click: '╳' }
+      - { click: '№' }
+      - { click: '卐' }
+      - { click: '卍' }
+      - { click: '囍' }
+      - { click: '▓' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/hilited_menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym153:
+    name: 特殊3
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '﹏' }
+      - { click: '﹍' }
+      - { click: '﹎' }
+      - { click: '―' }
+      - { click: '﹌' }
+      - { click: '﹉' }
+      - { click: '﹊' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '￣' }
+      - { click: '︴' }
+      - { click: '♩' }
+      - { click: '♪' }
+      - { click: '♫' }
+      - { click: '♬' }
+      - { click: '¶' }
+      - { click: kb_sym15u2, __include: styl/off_sym }
+      - { click: '‖' }
+      - { click: '♯' }
+      - { click: '♭' }
+      - { click: '◈' }
+      - { click: '◎' }
+      - { click: '™' }
+      - { click: '©' }
+      - { click: kb_sym15d4, __include: styl/off_sym }
+      - { click: '®' }
+      - { click: '⊙' }
+      - { click: '⊕' }
+      - { click: 'Ψ' }
+      - { click: '㊣' }
+      - { click: 'Θ' }
+      - { click: '¤' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/hilited_menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym154:
+    name: 特殊4
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '￥' }
+      - { click: '¥' }
+      - { click: '＄' }
+      - { click: '$' }
+      - { click: '￡' }
+      - { click: '£' }
+      - { click: '€' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '₩' }
+      - { click: '†' }
+      - { click: '‡' }
+      - { click: '㈱' }
+      - { click: '§' }
+      - { click: '〓' }
+      - { click: 'ˇ' }
+      - { click: kb_sym15u3, __include: styl/off_sym }
+      - { click: '«' }
+      - { click: '»' }
+      - { click: '‥' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym15d5, __include: styl/off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/hilited_menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym155:
+    name: 特殊5
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '︿' }
+      - { click: '﹁' }
+      - { click: '﹃' }
+      - { click: '︹' }
+      - { click: '︻' }
+      - { click: '︽' }
+      - { click: '︷' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '﹀' }
+      - { click: '﹂' }
+      - { click: '﹄' }
+      - { click: '︺' }
+      - { click: '︼' }
+      - { click: '︾' }
+      - { click: '︸' }
+      - { click: kb_sym15u4, __include: styl/off_sym }
+      - { click: '︵' }
+      - { click: '╭' }
+      - { click: '╮' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym15d5, __include: styl/unavl_off_sym }
+      - { click: '︶' }
+      - { click: '╰' }
+      - { click: '╯' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/hilited_menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym161:
+    name: 数学1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '=' }
+      - { click: '≠' }
+      - { click: '≈' }
+      - { click: '±' }
+      - { click: '+' }
+      - { click: '-' }
+      - { click: '×' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '÷' }
+      - { click: '>' }
+      - { click: '<' }
+      - { click: '≥' }
+      - { click: '≤' }
+      - { click: '/' }
+      - { click: '√' }
+      - { click: kb_sym16u1, __include: styl/unavl_off_sym }
+      - { click: '%' }
+      - { click: '‰' }
+      - { click: '(){Left}', __include: styl/long_text_size }
+      - { click: '{}{Left}', __include: styl/long_text_size }
+      - { click: '[]{Left}', __include: styl/long_text_size }
+      - { click: '||{Left}', __include: styl/long_text_size }
+      - { click: 'π' }
+      - { click: kb_sym16d2, __include: styl/off_sym }
+      - { click: '³√', __include: styl/long_text_size }
+      - { click: '℃' }
+      - { click: '℉' }
+      - { click: '㎎' }
+      - { click: '㎏' }
+      - { click: '㎜' }
+      - { click: '㎝' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/hilited_menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym162:
+    name: 数学2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '㎞' }
+      - { click: '㎡' }
+      - { click: 'm³', __include: styl/long_text_size }
+      - { click: '㏄' }
+      - { click: '㏕' }
+      - { click: '㏒' }
+      - { click: '㏑' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '°' }
+      - { click: '¹' }
+      - { click: '²' }
+      - { click: '³' }
+      - { click: 'ⁿ' }
+      - { click: '′' }
+      - { click: '〃' }
+      - { click: kb_sym16u1, __include: styl/off_sym }
+      - { click: '∞' }
+      - { click: '∑' }
+      - { click: '∈' }
+      - { click: '≡' }
+      - { click: '⊥' }
+      - { click: '∏' }
+      - { click: '↔' }
+      - { click: kb_sym16d3, __include: styl/off_sym }
+      - { click: ':=', __include: styl/long_text_size }
+      - { click: '¬' }
+      - { click: '⊕' }
+      - { click: '￠' }
+      - { click: 'Ψ' }
+      - { click: "f'", __include: styl/long_text_size }
+      - { click: '∥' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/hilited_menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym163:
+    name: 数学3
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '≮' }
+      - { click: '≯' }
+      - { click: '∝' }
+      - { click: '∠' }
+      - { click: '∽' }
+      - { click: '≌' }
+      - { click: '≒' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '∵' }
+      - { click: '∴' }
+      - { click: '∫' }
+      - { click: '∮' }
+      - { click: '∶' }
+      - { click: '∷' }
+      - { click: '⌒' }
+      - { click: kb_sym16u2, __include: styl/off_sym }
+      - { click: '∧' }
+      - { click: '∨' }
+      - { click: '∩' }
+      - { click: '∪' }
+      - { click: '⊿' }
+      - { click: '△' }
+      - { click: 'Δ' }
+      - { click: kb_sym16d4, __include: styl/off_sym }
+      - { click: '½' }
+      - { click: '⅓' }
+      - { click: '¼' }
+      - { click: '⅛' }
+      - { click: '¾' }
+      - { click: '⅜' }
+      - { click: '℅' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/hilited_menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym164:
+    name: 数学4
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '⊂' }
+      - { click: '⊃' }
+      - { click: '⊆' }
+      - { click: '⊇' }
+      - { click: '∃' }
+      - { click: '∃!', __include: styl/long_text_size }
+      - { click: '∅' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '∉' }
+      - { click: '⇒' }
+      - { click: '⇔' }
+      - { click: '∂' }
+      - { click: '∀' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym16u3, __include: styl/off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym16d4, __include: styl/unavl_off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/hilited_menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym171:
+    name: 序号1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '①' }
+      - { click: '②' }
+      - { click: '③' }
+      - { click: '④' }
+      - { click: '⑤' }
+      - { click: '⒈' }
+      - { click: '⒉' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '⑥' }
+      - { click: '⑦' }
+      - { click: '⑧' }
+      - { click: '⑨' }
+      - { click: '⑩' }
+      - { click: '⒊' }
+      - { click: '⒋' }
+      - { click: kb_sym17u, __include: styl/unavl_off_sym }
+      - { click: 'Ⅰ' }
+      - { click: 'Ⅱ' }
+      - { click: 'Ⅲ' }
+      - { click: 'Ⅳ' }
+      - { click: 'Ⅴ' }
+      - { click: '⒌' }
+      - { click: '⒍' }
+      - { click: kb_sym17d, __include: styl/off_sym }
+      - { click: 'Ⅵ' }
+      - { click: 'Ⅶ' }
+      - { click: 'Ⅷ' }
+      - { click: 'Ⅸ' }
+      - { click: 'Ⅹ' }
+      - { click: '⒎' }
+      - { click: '⒏' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/hilited_menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym172:
+    name: 序号2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '⑴' }
+      - { click: '⑵' }
+      - { click: '⑶' }
+      - { click: '⑷' }
+      - { click: '⑸' }
+      - { click: '⒐' }
+      - { click: '⒑' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '⑹' }
+      - { click: '⑺' }
+      - { click: '⑻' }
+      - { click: '⑼' }
+      - { click: '⑽' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym17u, __include: styl/off_sym }
+      - { click: '㈠' }
+      - { click: '㈡' }
+      - { click: '㈢' }
+      - { click: '㈣' }
+      - { click: '㈤' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym17d, __include: styl/unavl_off_sym }
+      - { click: '㈥' }
+      - { click: '㈦' }
+      - { click: '㈧' }
+      - { click: '㈨' }
+      - { click: '㈩' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/hilited_menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  sym211:
+    name: 注音1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'ā' }
+      - { click: 'ō' }
+      - { click: 'ē' }
+      - { click: 'ī' }
+      - { click: 'ū' }
+      - { click: 'ǖ' }
+      - { click: 'ü' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'á' }
+      - { click: 'ó' }
+      - { click: 'é' }
+      - { click: 'í' }
+      - { click: 'ú' }
+      - { click: 'ǘ' }
+      - { click: 'ê' }
+      - { click: kb_sym21u1, __include: styl/unavl_off_sym }
+      - { click: 'ǎ' }
+      - { click: 'ǒ' }
+      - { click: 'ě' }
+      - { click: 'ǐ' }
+      - { click: 'ǔ' }
+      - { click: 'ǚ' }
+      - { click: 'ɑ' }
+      - { click: kb_sym21d2, __include: styl/off_sym }
+      - { click: 'à' }
+      - { click: 'ò' }
+      - { click: 'è' }
+      - { click: 'ì' }
+      - { click: 'ù' }
+      - { click: 'ǜ' }
+      - { click: 'ń' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/hilited_menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym212:
+    name: 注音2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'ň' }
+      - { click: 'ɡ' }
+      - { click: 'ㄅ' }
+      - { click: 'ㄆ' }
+      - { click: 'ㄇ' }
+      - { click: 'ㄈ' }
+      - { click: 'ㄉ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'ㄊ' }
+      - { click: 'ㄋ' }
+      - { click: 'ㄌ' }
+      - { click: 'ㄍ' }
+      - { click: 'ㄎ' }
+      - { click: 'ㄏ' }
+      - { click: 'ㄐ' }
+      - { click: kb_sym21u1, __include: styl/off_sym }
+      - { click: 'ㄑ' }
+      - { click: 'ㄒ' }
+      - { click: 'ㄓ' }
+      - { click: 'ㄔ' }
+      - { click: 'ㄕ' }
+      - { click: 'ㄖ' }
+      - { click: 'ㄗ' }
+      - { click: kb_sym21d3, __include: styl/off_sym }
+      - { click: 'ㄘ' }
+      - { click: 'ㄙ' }
+      - { click: 'ㄚ' }
+      - { click: 'ㄛ' }
+      - { click: 'ㄜ' }
+      - { click: 'ㄝ' }
+      - { click: 'ㄞ' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/hilited_menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym213:
+    name: 注音3
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'ㄟ' }
+      - { click: 'ㄠ' }
+      - { click: 'ㄡ' }
+      - { click: 'ㄢ' }
+      - { click: 'ㄣ' }
+      - { click: 'ㄤ' }
+      - { click: 'ㄥ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'ㄦ' }
+      - { click: 'ㄧ' }
+      - { click: '丨' }
+      - { click: 'ㄨ' }
+      - { click: 'ㄩ' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym21u2, __include: styl/off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym21d3, __include: styl/unavl_off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/hilited_menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym221:
+    name: 日文1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'ぁ' }
+      - { click: 'あ' }
+      - { click: 'ぃ' }
+      - { click: 'い' }
+      - { click: 'ぅ' }
+      - { click: 'う' }
+      - { click: 'ぇ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'え' }
+      - { click: 'ぉ' }
+      - { click: 'お' }
+      - { click: 'か' }
+      - { click: 'が' }
+      - { click: 'き' }
+      - { click: 'ぎ' }
+      - { click: kb_sym22u1, __include: styl/unavl_off_sym }
+      - { click: 'く' }
+      - { click: 'ぐ' }
+      - { click: 'け' }
+      - { click: 'げ' }
+      - { click: 'こ' }
+      - { click: 'ご' }
+      - { click: 'さ' }
+      - { click: kb_sym22d2, __include: styl/off_sym }
+      - { click: 'ざ' }
+      - { click: 'し' }
+      - { click: 'じ' }
+      - { click: 'す' }
+      - { click: 'ず' }
+      - { click: 'せ' }
+      - { click: 'ぜ' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/hilited_menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym222:
+    name: 日文2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'つ' }
+      - { click: 'づ' }
+      - { click: 'て' }
+      - { click: 'で' }
+      - { click: 'と' }
+      - { click: 'ど' }
+      - { click: 'な' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'に' }
+      - { click: 'ぬ' }
+      - { click: 'ね' }
+      - { click: 'の' }
+      - { click: 'は' }
+      - { click: 'ば' }
+      - { click: 'ぱ' }
+      - { click: kb_sym22u1, __include: styl/off_sym }
+      - { click: 'ひ' }
+      - { click: 'び' }
+      - { click: 'ぴ' }
+      - { click: 'ふ' }
+      - { click: 'ぶ' }
+      - { click: 'ぷ' }
+      - { click: 'へ' }
+      - { click: kb_sym22d3, __include: styl/off_sym }
+      - { click: 'べ' }
+      - { click: 'ぺ' }
+      - { click: 'ほ' }
+      - { click: 'ぼ' }
+      - { click: 'ぽ' }
+      - { click: 'ま' }
+      - { click: 'み' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/hilited_menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym223:
+    name: 日文3
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'む' }
+      - { click: 'め' }
+      - { click: 'も' }
+      - { click: 'ゃ' }
+      - { click: 'や' }
+      - { click: 'ゅ' }
+      - { click: 'ゆ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'ょ' }
+      - { click: 'よ' }
+      - { click: 'ら' }
+      - { click: 'り' }
+      - { click: 'る' }
+      - { click: 'れ' }
+      - { click: 'ろ' }
+      - { click: kb_sym22u2, __include: styl/off_sym }
+      - { click: 'ゎ' }
+      - { click: 'わ' }
+      - { click: 'ゐ' }
+      - { click: 'ゑ' }
+      - { click: 'を' }
+      - { click: 'ん' }
+      - { click: 'ゔ' }
+      - { click: kb_sym22d4, __include: styl/off_sym }
+      - { click: 'ゕ' }
+      - { click: 'ゖ' }
+      - { click: '゚' }
+      - { click: '゛' }
+      - { click: '゜' }
+      - { click: 'ゝ' }
+      - { click: 'ゞ' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/hilited_menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym224:
+    name: 日文4
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'ゟ' }
+      - { click: '゠' }
+      - { click: 'ァ' }
+      - { click: 'ア' }
+      - { click: 'ィ' }
+      - { click: 'イ' }
+      - { click: 'ゥ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'ウ' }
+      - { click: 'ェ' }
+      - { click: 'エ' }
+      - { click: 'ォ' }
+      - { click: 'オ' }
+      - { click: 'カ' }
+      - { click: 'ガ' }
+      - { click: kb_sym22u3, __include: styl/off_sym }
+      - { click: 'キ' }
+      - { click: 'ギ' }
+      - { click: 'ク' }
+      - { click: 'グ' }
+      - { click: 'ケ' }
+      - { click: 'ゲ' }
+      - { click: 'コ' }
+      - { click: kb_sym22d5, __include: styl/off_sym }
+      - { click: 'ゴ' }
+      - { click: 'サ' }
+      - { click: 'ザ' }
+      - { click: 'シ' }
+      - { click: 'ジ' }
+      - { click: 'ス' }
+      - { click: 'ズ' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/hilited_menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym225:
+    name: 日文5
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'セ' }
+      - { click: 'ゼ' }
+      - { click: 'ソ' }
+      - { click: 'ゾ' }
+      - { click: 'タ' }
+      - { click: 'ダ' }
+      - { click: 'チ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'ヂ' }
+      - { click: 'ッ' }
+      - { click: 'ツ' }
+      - { click: 'ヅ' }
+      - { click: 'テ' }
+      - { click: 'デ' }
+      - { click: 'ト' }
+      - { click: kb_sym22u4, __include: styl/off_sym }
+      - { click: 'ド' }
+      - { click: 'ナ' }
+      - { click: 'ニ' }
+      - { click: 'ヌ' }
+      - { click: 'ネ' }
+      - { click: 'ノ' }
+      - { click: 'ハ' }
+      - { click: kb_sym22d6, __include: styl/off_sym }
+      - { click: 'バ' }
+      - { click: 'パ' }
+      - { click: 'ヒ' }
+      - { click: 'ビ' }
+      - { click: 'ピ' }
+      - { click: 'フ' }
+      - { click: 'ブ' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/hilited_menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym226:
+    name: 日文6
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'プ' }
+      - { click: 'ヘ' }
+      - { click: 'ベ' }
+      - { click: 'ペ' }
+      - { click: 'ホ' }
+      - { click: 'ボ' }
+      - { click: 'ポ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'マ' }
+      - { click: 'ミ' }
+      - { click: 'ム' }
+      - { click: 'メ' }
+      - { click: 'モ' }
+      - { click: 'ャ' }
+      - { click: 'ヤ' }
+      - { click: kb_sym22u5, __include: styl/off_sym }
+      - { click: 'ュ' }
+      - { click: 'ユ' }
+      - { click: 'ョ' }
+      - { click: 'ヨ' }
+      - { click: 'ラ' }
+      - { click: 'リ' }
+      - { click: 'ル' }
+      - { click: kb_sym22d7, __include: styl/off_sym }
+      - { click: 'レ' }
+      - { click: 'ロ' }
+      - { click: 'ヮ' }
+      - { click: 'ワ' }
+      - { click: 'ヰ' }
+      - { click: 'ヱ' }
+      - { click: 'ヲ' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/hilited_menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym227:
+    name: 日文7
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'ン' }
+      - { click: 'ヴ' }
+      - { click: 'ヵ' }
+      - { click: 'ヶ' }
+      - { click: 'ヷ' }
+      - { click: 'ヸ' }
+      - { click: 'ヹ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'ヺ' }
+      - { click: '・' }
+      - { click: 'ー' }
+      - { click: 'ヽ' }
+      - { click: 'ヾ' }
+      - { click: 'ヿ' }
+      - { click: '㍿' }
+      - { click: kb_sym22u6, __include: styl/off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym22d7, __include: styl/unavl_off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/hilited_menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym231:
+    name: 音标1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'i:', __include: styl/long_text_size }
+      - { click: 'ɜ:', __include: styl/long_text_size }
+      - { click: 'ɑ:', __include: styl/long_text_size }
+      - { click: 'ɔ:', __include: styl/long_text_size }
+      - { click: 'u:', __include: styl/long_text_size }
+      - { click: 'ɪ' }
+      - { click: 'e' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'æ' }
+      - { click: 'ʌ' }
+      - { click: 'ɒ' }
+      - { click: 'ʊ' }
+      - { click: 'ə' }
+      - { click: 'eɪ', __include: styl/long_text_size }
+      - { click: 'aɪ', __include: styl/long_text_size }
+      - { click: kb_sym23u, __include: styl/unavl_off_sym }
+      - { click: 'ɔɪ', __include: styl/long_text_size }
+      - { click: 'əʊ', __include: styl/long_text_size }
+      - { click: 'aʊ', __include: styl/long_text_size }
+      - { click: 'ɪə', __include: styl/long_text_size }
+      - { click: 'eə', __include: styl/long_text_size }
+      - { click: 'ʊə', __include: styl/long_text_size }
+      - { click: 'p' }
+      - { click: kb_sym23d, __include: styl/off_sym }
+      - { click: 't' }
+      - { click: 'k' }
+      - { click: 'f' }
+      - { click: 'θ' }
+      - { click: 's' }
+      - { click: 'ʃ' }
+      - { click: 'h' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/hilited_menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym232:
+    name: 音标2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'tʃ', __include: styl/long_text_size }
+      - { click: 'ts', __include: styl/long_text_size }
+      - { click: 'tr', __include: styl/long_text_size }
+      - { click: 'b' }
+      - { click: 'd' }
+      - { click: 'g' }
+      - { click: 'v' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'ð' }
+      - { click: 'z' }
+      - { click: 'ʒ' }
+      - { click: 'r' }
+      - { click: 'dʒ', __include: styl/long_text_size }
+      - { click: 'dz', __include: styl/long_text_size }
+      - { click: 'dr', __include: styl/long_text_size }
+      - { click: kb_sym23u, __include: styl/off_sym }
+      - { click: 'j' }
+      - { click: 'w' }
+      - { click: 'm' }
+      - { click: 'n' }
+      - { click: 'ŋ' }
+      - { click: 'l' }
+      - { click: '' }
+      - { click: kb_sym23d, __include: styl/unavl_off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/hilited_menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym241:
+    name: 希俄1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'α' }
+      - { click: 'β' }
+      - { click: 'γ' }
+      - { click: 'δ' }
+      - { click: 'ε' }
+      - { click: 'ζ' }
+      - { click: 'η' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'θ' }
+      - { click: 'ι' }
+      - { click: 'κ' }
+      - { click: 'λ' }
+      - { click: 'μ' }
+      - { click: 'ν' }
+      - { click: 'ξ' }
+      - { click: kb_sym24u1, __include: styl/unavl_off_sym }
+      - { click: 'ο' }
+      - { click: 'π' }
+      - { click: 'ρ' }
+      - { click: 'σ' }
+      - { click: 'τ' }
+      - { click: 'υ' }
+      - { click: 'φ' }
+      - { click: kb_sym24d2, __include: styl/off_sym }
+      - { click: 'χ' }
+      - { click: 'ψ' }
+      - { click: 'ω' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/hilited_menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym242:
+    name: 希俄2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'Α' }
+      - { click: 'Β' }
+      - { click: 'Γ' }
+      - { click: 'Δ' }
+      - { click: 'Ε' }
+      - { click: 'Ζ' }
+      - { click: 'Η' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'Θ' }
+      - { click: 'Ι' }
+      - { click: 'Κ' }
+      - { click: 'Λ' }
+      - { click: 'Μ' }
+      - { click: 'Ν' }
+      - { click: 'Ξ' }
+      - { click: kb_sym24u1, __include: styl/off_sym }
+      - { click: 'Ο' }
+      - { click: 'Π' }
+      - { click: 'Ρ' }
+      - { click: 'Σ' }
+      - { click: 'Τ' }
+      - { click: 'Υ' }
+      - { click: 'Φ' }
+      - { click: kb_sym24d3, __include: styl/off_sym }
+      - { click: 'Χ' }
+      - { click: 'Ψ' }
+      - { click: 'Ω' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/hilited_menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym243:
+    name: 希俄3
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'а' }
+      - { click: 'б' }
+      - { click: 'в' }
+      - { click: 'г' }
+      - { click: 'д' }
+      - { click: 'е' }
+      - { click: 'ё' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'ж' }
+      - { click: 'з' }
+      - { click: 'и' }
+      - { click: 'й' }
+      - { click: 'к' }
+      - { click: 'л' }
+      - { click: 'м' }
+      - { click: kb_sym24u2, __include: styl/off_sym }
+      - { click: 'н' }
+      - { click: 'о' }
+      - { click: 'п' }
+      - { click: 'р' }
+      - { click: 'с' }
+      - { click: 'т' }
+      - { click: 'у' }
+      - { click: kb_sym24d4, __include: styl/off_sym }
+      - { click: 'ф' }
+      - { click: 'х' }
+      - { click: 'ц' }
+      - { click: 'ч' }
+      - { click: 'ш' }
+      - { click: 'щ' }
+      - { click: 'ъ' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/hilited_menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym244:
+    name: 希俄4
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'ы' }
+      - { click: 'ь' }
+      - { click: 'э' }
+      - { click: 'ю' }
+      - { click: 'я' }
+      - { click: '' }
+      - { click: '' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'А' }
+      - { click: 'Б' }
+      - { click: 'В' }
+      - { click: 'Г' }
+      - { click: 'Д' }
+      - { click: 'Е' }
+      - { click: 'Ё' }
+      - { click: kb_sym24u3, __include: styl/off_sym }
+      - { click: 'Ж' }
+      - { click: 'З' }
+      - { click: 'И' }
+      - { click: 'Й' }
+      - { click: 'К' }
+      - { click: 'Л' }
+      - { click: 'М' }
+      - { click: kb_sym24d5, __include: styl/off_sym }
+      - { click: 'Н' }
+      - { click: 'О' }
+      - { click: 'П' }
+      - { click: 'Р' }
+      - { click: 'С' }
+      - { click: 'Т' }
+      - { click: 'У' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/hilited_menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym245:
+    name: 希俄5
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'Ф' }
+      - { click: 'Х' }
+      - { click: 'Ц' }
+      - { click: 'Ч' }
+      - { click: 'Ш' }
+      - { click: 'Щ' }
+      - { click: 'Ъ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'Ы' }
+      - { click: 'Ь' }
+      - { click: 'Э' }
+      - { click: 'Ю' }
+      - { click: 'Я' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym24u4, __include: styl/off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym24d5, __include: styl/unavl_off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/hilited_menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym251:
+    name: 拉丁1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'Ä' }
+      - { click: 'Æ' }
+      - { click: 'Å' }
+      - { click: 'À' }
+      - { click: 'Á' }
+      - { click: 'Â' }
+      - { click: 'Ã' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'Ç' }
+      - { click: 'È' }
+      - { click: 'É' }
+      - { click: 'Ê' }
+      - { click: 'Ë' }
+      - { click: 'Ð' }
+      - { click: 'Ì' }
+      - { click: kb_sym25u1, __include: styl/unavl_off_sym }
+      - { click: 'Í' }
+      - { click: 'Î' }
+      - { click: 'Ï' }
+      - { click: 'Ö' }
+      - { click: 'Ø' }
+      - { click: 'Ò' }
+      - { click: 'Ó' }
+      - { click: kb_sym25d2, __include: styl/off_sym }
+      - { click: 'Ô' }
+      - { click: 'Õ' }
+      - { click: 'Ñ' }
+      - { click: 'Ù' }
+      - { click: 'Ú' }
+      - { click: 'Û' }
+      - { click: 'Ü' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/hilited_menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym252:
+    name: 拉丁2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'Ý' }
+      - { click: 'Þ' }
+      - { click: 'ä' }
+      - { click: 'æ' }
+      - { click: 'å' }
+      - { click: 'à' }
+      - { click: 'á' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'â' }
+      - { click: 'ã' }
+      - { click: 'ç' }
+      - { click: 'è' }
+      - { click: 'é' }
+      - { click: 'ê' }
+      - { click: 'ë' }
+      - { click: kb_sym25u1, __include: styl/off_sym }
+      - { click: 'ð' }
+      - { click: 'ì' }
+      - { click: 'í' }
+      - { click: 'î' }
+      - { click: 'ï' }
+      - { click: 'ö' }
+      - { click: 'ø' }
+      - { click: kb_sym25d3, __include: styl/off_sym }
+      - { click: 'ò' }
+      - { click: 'ó' }
+      - { click: 'ô' }
+      - { click: 'õ' }
+      - { click: 'ñ' }
+      - { click: 'ù' }
+      - { click: 'ú' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/hilited_menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym253:
+    name: 拉丁3
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: 'û' }
+      - { click: 'ü' }
+      - { click: 'ý' }
+      - { click: 'þ' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym25u2, __include: styl/off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: kb_sym25d3, __include: styl/unavl_off_sym }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/hilited_menu }
+      - { click: kb_sym26, __include: styl/menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym261:
+    name: 制表1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '─' }
+      - { click: '┈' }
+      - { click: '━' }
+      - { click: '┅' }
+      - { click: '┉' }
+      - { click: '┏' }
+      - { click: '┓' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '┄' }
+      - { click: '┊' }
+      - { click: '┃' }
+      - { click: '┇' }
+      - { click: '┋' }
+      - { click: '┗' }
+      - { click: '┛' }
+      - { click: kb_sym26u1, __include: styl/unavl_off_sym }
+      - { click: '│' }
+      - { click: '┌' }
+      - { click: '┐' }
+      - { click: '┍' }
+      - { click: '┑' }
+      - { click: '┎' }
+      - { click: '┒' }
+      - { click: kb_sym26d2, __include: styl/off_sym }
+      - { click: '┆' }
+      - { click: '└' }
+      - { click: '┘' }
+      - { click: '┕' }
+      - { click: '┙' }
+      - { click: '┖' }
+      - { click: '┚' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/hilited_menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym262:
+    name: 制表2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '├' }
+      - { click: '┝' }
+      - { click: '┞' }
+      - { click: '┟' }
+      - { click: '┠' }
+      - { click: '┢' }
+      - { click: '┪' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '┤' }
+      - { click: '┥' }
+      - { click: '┦' }
+      - { click: '┧' }
+      - { click: '┨' }
+      - { click: '┡' }
+      - { click: '┩' }
+      - { click: kb_sym26u1, __include: styl/off_sym }
+      - { click: '┣' }
+      - { click: '┬' }
+      - { click: '┭' }
+      - { click: '┮' }
+      - { click: '┯' }
+      - { click: '┰' }
+      - { click: '┳' }
+      - { click: kb_sym26d3, __include: styl/off_sym }
+      - { click: '┫' }
+      - { click: '┴' }
+      - { click: '┵' }
+      - { click: '┶' }
+      - { click: '┷' }
+      - { click: '┸' }
+      - { click: '┻' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/hilited_menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym263:
+    name: 制表3
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '┲' }
+      - { click: '┱' }
+      - { click: '┽' }
+      - { click: '╀' }
+      - { click: '╉' }
+      - { click: '╇' }
+      - { click: '┿' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '┺' }
+      - { click: '┹' }
+      - { click: '┾' }
+      - { click: '╁' }
+      - { click: '╊' }
+      - { click: '╈' }
+      - { click: '╂' }
+      - { click: kb_sym26u2, __include: styl/off_sym }
+      - { click: '┼' }
+      - { click: '╆' }
+      - { click: '╅' }
+      - { click: '╒' }
+      - { click: '╕' }
+      - { click: '╓' }
+      - { click: '╖' }
+      - { click: kb_sym26d4, __include: styl/off_sym }
+      - { click: '╋' }
+      - { click: '╄' }
+      - { click: '╃' }
+      - { click: '╘' }
+      - { click: '╛' }
+      - { click: '╙' }
+      - { click: '╜' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/hilited_menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  sym264:
+    name: 制表4
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '╔' }
+      - { click: '╗' }
+      - { click: '═' }
+      - { click: '╞' }
+      - { click: '╟' }
+      - { click: '╠' }
+      - { click: '╤' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '╚' }
+      - { click: '╝' }
+      - { click: '║' }
+      - { click: '╡' }
+      - { click: '╢' }
+      - { click: '╣' }
+      - { click: '╧' }
+      - { click: kb_sym26u3, __include: styl/off_sym }
+      - { click: '╥' }
+      - { click: '╦' }
+      - { click: '╭' }
+      - { click: '╮' }
+      - { click: '╪' }
+      - { click: '╫' }
+      - { click: '╬' }
+      - { click: kb_sym26d4, __include: styl/unavl_off_sym }
+      - { click: '╨' }
+      - { click: '╩' }
+      - { click: '╰' }
+      - { click: '╯' }
+      - { click: '╱' }
+      - { click: '╲' }
+      - { click: '╳' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym21, __include: styl/menu }
+      - { click: kb_sym22, __include: styl/menu }
+      - { click: kb_sym23, __include: styl/menu }
+      - { click: kb_sym24, __include: styl/menu }
+      - { click: kb_sym25, __include: styl/menu }
+      - { click: kb_sym26, __include: styl/hilited_menu }
+      - { click: '', __include: styl/menu }
+      - { click: kb_sym1, __include: styl/menu }
+
+  emoji1:
+    name: emoji1
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '😊' }
+      - { click: '😌' }
+      - { click: '😚' }
+      - { click: '😓' }
+      - { click: '😰' }
+      - { click: '😝' }
+      - { click: '😁' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '😜' }
+      - { click: '☺️' }
+      - { click: '😉' }
+      - { click: '😍' }
+      - { click: '😔' }
+      - { click: '😄' }
+      - { click: '😏' }
+      - { click: kb_emojiu1, __include: styl/unavl_off_sym }
+      - { click: '😒' }
+      - { click: '😳' }
+      - { click: '😘' }
+      - { click: '😭' }
+      - { click: '😱' }
+      - { click: '😂' }
+      - { click: '💪' }
+      - { click: kb_emojid2, __include: styl/off_sym }
+      - { click: '👊' }
+      - { click: '👍' }
+      - { click: '☝️' }
+      - { click: '👏' }
+      - { click: '✌️' }
+      - { click: '👎' }
+      - { click: '🙏' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/hilited_menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  emoji2:
+    name: emoji2
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '👌' }
+      - { click: '👈' }
+      - { click: '👉' }
+      - { click: '👆' }
+      - { click: '👇' }
+      - { click: '👀' }
+      - { click: '👃' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '👄' }
+      - { click: '👂' }
+      - { click: '🍚' }
+      - { click: '🍝' }
+      - { click: '🍜' }
+      - { click: '🍙' }
+      - { click: '🍧' }
+      - { click: kb_emojiu1, __include: styl/off_sym }
+      - { click: '🍣' }
+      - { click: '🎂' }
+      - { click: '🍞' }
+      - { click: '🍔' }
+      - { click: '🍳' }
+      - { click: '🍟' }
+      - { click: '🍺' }
+      - { click: kb_emojid3, __include: styl/off_sym }
+      - { click: '🍻' }
+      - { click: '🍸' }
+      - { click: '☕️' }
+      - { click: '🍎' }
+      - { click: '🍊' }
+      - { click: '🍓' }
+      - { click: '🍉' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/hilited_menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  emoji3:
+    name: emoji3
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '💊' }
+      - { click: '🚬' }
+      - { click: '🎄' }
+      - { click: '🌹' }
+      - { click: '🎉' }
+      - { click: '🌴' }
+      - { click: '💝' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '🎀' }
+      - { click: '🎈' }
+      - { click: '🐚' }
+      - { click: '💍' }
+      - { click: '💣' }
+      - { click: '👑' }
+      - { click: '🔔' }
+      - { click: kb_emojiu2, __include: styl/off_sym }
+      - { click: '⭐️' }
+      - { click: '✨' }
+      - { click: '💨' }
+      - { click: '💦' }
+      - { click: '🔥' }
+      - { click: '🏆' }
+      - { click: '💰' }
+      - { click: kb_emojid4, __include: styl/off_sym }
+      - { click: '💤' }
+      - { click: '⚡️' }
+      - { click: '👣' }
+      - { click: '💩' }
+      - { click: '💉' }
+      - { click: '♨️' }
+      - { click: '📫' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/hilited_menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  emoji4:
+    name: emoji4
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '🔑' }
+      - { click: '🔒' }
+      - { click: '✈️' }
+      - { click: '🚄' }
+      - { click: '🚗' }
+      - { click: '🚤' }
+      - { click: '🚲' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '🐎' }
+      - { click: '🚀' }
+      - { click: '🚌' }
+      - { click: '⛵️' }
+      - { click: '👩' }
+      - { click: '👨' }
+      - { click: '👧' }
+      - { click: kb_emojiu3, __include: styl/off_sym }
+      - { click: '👦' }
+      - { click: '🐵' }
+      - { click: '🐙' }
+      - { click: '🐷' }
+      - { click: '💀' }
+      - { click: '🐤' }
+      - { click: '🐨' }
+      - { click: kb_emojid5, __include: styl/off_sym }
+      - { click: '🐮' }
+      - { click: '🐔' }
+      - { click: '🐸' }
+      - { click: '👻' }
+      - { click: '🐛' }
+      - { click: '🐠' }
+      - { click: '🐶' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/hilited_menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  emoji5:
+    name: emoji5
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '🐯' }
+      - { click: '👼' }
+      - { click: '🐧' }
+      - { click: '🐳' }
+      - { click: '🐭' }
+      - { click: '👒' }
+      - { click: '👗' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '💄' }
+      - { click: '👠' }
+      - { click: '👢' }
+      - { click: '🌂' }
+      - { click: '👜' }
+      - { click: '👙' }
+      - { click: '👕' }
+      - { click: kb_emojiu4, __include: styl/off_sym }
+      - { click: '👟' }
+      - { click: '☁️' }
+      - { click: '☀️' }
+      - { click: '☔️' }
+      - { click: '🌙' }
+      - { click: '⛄️' }
+      - { click: '⭕️' }
+      - { click: kb_emojid6, __include: styl/off_sym }
+      - { click: '❌' }
+      - { click: '❔' }
+      - { click: '❕' }
+      - { click: '☎️' }
+      - { click: '📷' }
+      - { click: '📱' }
+      - { click: '📠' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/hilited_menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  emoji6:
+    name: emoji6
+    __include: conf/sym
+    __patch: conf/bottom
+    keys:
+      - { click: '💻' }
+      - { click: '🎥' }
+      - { click: '🎤' }
+      - { click: '🔫' }
+      - { click: '💿' }
+      - { click: '💓' }
+      - { click: '♣️' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '🀄️' }
+      - { click: '〽️' }
+      - { click: '🎰' }
+      - { click: '🚥' }
+      - { click: '🚧' }
+      - { click: '🎸' }
+      - { click: '💈' }
+      - { click: kb_emojiu5, __include: styl/off_sym }
+      - { click: '🛀' }
+      - { click: '🚽' }
+      - { click: '🏠' }
+      - { click: '⛪️' }
+      - { click: '🏦' }
+      - { click: '🏥' }
+      - { click: '🏨' }
+      - { click: kb_emojid6, __include: styl/unavl_off_sym }
+      - { click: '🏧' }
+      - { click: '🏪' }
+      - { click: '🚹' }
+      - { click: '🚺' }
+      - { click: '' }
+      - { click: '' }
+      - { click: '' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_sym11, __include: styl/menu }
+      - { click: kb_sym12, __include: styl/menu }
+      - { click: kb_emoji, __include: styl/hilited_menu }
+      - { click: kb_ywz, __include: styl/menu }
+      - { click: kb_sym15, __include: styl/menu }
+      - { click: kb_sym16, __include: styl/menu }
+      - { click: kb_sym17, __include: styl/menu }
+      - { click: kb_sym2, __include: styl/menu }
+
+  ywz11:
+    name: 开心1
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: '^_^' }
+      - { click: '^ω^' }
+      - { click: '^o^' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: "~\\(≧▽≦)/~" }
+      - { click: '*^_^*' }
+      - { click: '↖(^ω^)↗' }
+      - { click: kb_ywz1u, __include: styl/unavl_off_sym }
+      - { click: '(^o^)／' }
+      - { click: '(=^▽^=)' }
+      - { click: '=^_^=' }
+      - { click: kb_ywz1d, __include: styl/off_sym }
+      - { click: '(*^ω^*)' }
+      - { click: '٩(๑^o^๑)۶' }
+      - { click: 'o(￣▽￣)o' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz12:
+    name: 开心2
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: 'Y(^_^)Y' }
+      - { click: "٩( 'ω' )و" }
+      - { click: '╰(*´︶`*)╯' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '*罒▽罒*' }
+      - { click: 'ヾ ^_^♪' }
+      - { click: '=￣ω￣=' }
+      - { click: kb_ywz1u, __include: styl/off_sym }
+      - { click: '︿(￣︶￣)︿' }
+      - { click: '(´▽｀)ノ♪' }
+      - { click: '乁( ˙ ω˙乁)' }
+      - { click: kb_ywz1d, __include: styl/unavl_off_sym }
+      - { click: '✧*｡٩(ˊωˋ*)و✧*｡', key_text_size: '13' }
+      - { click: '～(￣▽￣～)(～￣▽￣)～', __include: styl/ywz_double_width }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz21:
+    name: 喜欢1
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: 'QwQ' }
+      - { click: '(●—●)' }
+      - { click: '(๑• . •๑)' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: 'ヾ(≧O≦)〃嗷~', key_text_size: '14' }
+      - { click: '罒ω罒' }
+      - { click: '(｡ì _ í｡)' }
+      - { click: kb_ywz2u, __include: styl/unavl_off_sym }
+      - { click: '(๑•ี_เ•ี๑)' }
+      - { click: 'ㄟ(≧◇≦)ㄏ' }
+      - { click: '(*/ω＼*)' }
+      - { click: kb_ywz2d, __include: styl/off_sym }
+      - { click: '●▽●' }
+      - { click: '٩(๑òωó๑)۶' }
+      - { click: '✺◟(∗❛ัᴗ❛ั∗)◞✺', key_text_size: '14' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz22:
+    name: 喜欢2
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: "( σ'ω')σ" }
+      - { click: '♡＾▽＾♡' }
+      - { click: '(๑•̀ㅂ•́)و✧' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '(ง •̀_•́)ง' }
+      - { click: '(｡･ω･｡)ﾉ♡' }
+      - { click: '(☆_☆)' }
+      - { click: kb_ywz2u, __include: styl/off_sym }
+      - { click: '(๑°3°๑)' }
+      - { click: '_(•̀ω•́ 」∠)_' }
+      - { click: '♪～(´ε｀　)' }
+      - { click: kb_ywz2d, __include: styl/unavl_off_sym }
+      - { click: '～(^з^)-☆' }
+      - { click: '(´∀｀)♡' }
+      - { click: 'ლ(´ڡ`ლ)' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz31:
+    name: 伤心1
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: '(＞﹏＜)' }
+      - { click: 'T_T' }
+      - { click: '⊙︿⊙' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '〒▽〒' }
+      - { click: '⊙﹏⊙' }
+      - { click: 'π_π' }
+      - { click: kb_ywz3u, __include: styl/unavl_off_sym }
+      - { click: '(｡•́︿•̀｡)' }
+      - { click: '(ToT)/~~~' }
+      - { click: '╯﹏╰' }
+      - { click: kb_ywz3d, __include: styl/off_sym }
+      - { click: 'ಥ_ಥ' }
+      - { click: '(╥╯^╰╥)' }
+      - { click: '(〃′o`)' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz32:
+    name: 伤心2
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: '●﹏●' }
+      - { click: '( •̥́ ˍ •̀ू )' }
+      - { click: '(つд⊂)' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '心塞(´-ωก`)' }
+      - { click: '(╥﹏╥)' }
+      - { click: '┭┮﹏┭┮' }
+      - { click: kb_ywz3u, __include: styl/off_sym }
+      - { click: '（；´д｀）ゞ' }
+      - { click: '(´;︵;`)' }
+      - { click: '(。﹏。)' }
+      - { click: kb_ywz3d, __include: styl/unavl_off_sym }
+      - { click: '┗( T﹏T )┛' }
+      - { click: 'QAQ' }
+      - { click: 'ヘ(_ _ヘ)' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz41:
+    name: 生气1
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: '╰（‵□′）╯' }
+      - { click: '(*￣︿￣)' }
+      - { click: '>o<' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '(-`ェ´-怒)' }
+      - { click: 'ヽ(‘⌒´メ)ノ' }
+      - { click: '(*｀Ω´*)v' }
+      - { click: kb_ywz4u, __include: styl/unavl_off_sym }
+      - { click: '(｡•ˇ‸ˇ•｡)' }
+      - { click: '(怒｀Д´怒)' }
+      - { click: '٩(๑`^´๑)۶' }
+      - { click: kb_ywz4d, __include: styl/off_sym }
+      - { click: '(;｀O´)o' }
+      - { click: '╰_╯' }
+      - { click: '(#｀皿´)<怒怒怒!!!', key_text_size: '13' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz42:
+    name: 生气2
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: '<(｀^´)>' }
+      - { click: '（｀Δ´）！' }
+      - { click: 'ψ(｀∇´)ψ' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '(；′⌒`)' }
+      - { click: 's(・｀ヘ´・;)ゞ', key_text_size: '14' }
+      - { click: '(▼皿▼#)' }
+      - { click: kb_ywz4u, __include: styl/off_sym }
+      - { click: '￣へ￣' }
+      - { click: '←_←' }
+      - { click: '（╯‵□′）╯︵┴─┴', key_text_size: '12' }
+      - { click: kb_ywz4d, __include: styl/unavl_off_sym }
+      - { click: '（▼へ▼メ）' }
+      - { click: '☄ฺ(◣д◢)☄ฺ' }
+      - { click: '→_→' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz51:
+    name: 惊讶1
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: '⊙_⊙' }
+      - { click: 'd(ŐдŐ๑)' }
+      - { click: 'Σ( ° △ °|||)︴' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '(((φ(◎ロ◎;)φ)))', key_text_size: '13' }
+      - { click: '⊙▽⊙' }
+      - { click: '(๑ŐдŐ)b' }
+      - { click: kb_ywz5u, __include: styl/unavl_off_sym }
+      - { click: '╭(°A°`)╮' }
+      - { click: '(๑òᆺó๑)' }
+      - { click: '⊙ω⊙' }
+      - { click: kb_ywz5d, __include: styl/off_sym }
+      - { click: 'Σ(っ °Д °;)っ' }
+      - { click: ' (ﾟДﾟ≡ﾟдﾟ)!?' }
+      - { click: '( *・ω・)✄╰ひ╯', key_text_size: '12' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz52:
+    name: 惊讶2
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: '(⊙x⊙;)' }
+      - { click: '┌(。Д。)┐' }
+      - { click: '(°ー°〃)' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '︽⊙_⊙︽' }
+      - { click: '!!!∑(°Д°ノ)ノ' }
+      - { click: '!!!∑(°Д°ノ)ノ' }
+      - { click: kb_ywz5u, __include: styl/off_sym }
+      - { click: 'Σ⊙▃⊙川' }
+      - { click: '(๑ŐдŐ)b☆d(ŐдŐ๑)', __include: styl/ywz_double_width }
+      - { click: kb_ywz5d, __include: styl/unavl_off_sym }
+      - { click: 'ヽ(*。>Д<)o゜' }
+      - { click: '━((*′д｀)爻(′д｀*))━!!!!', __include: styl/ywz_double_width }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_hilited_menu }
+      - { click: kb_ywz6, __include: styl/ywz_menu }
+
+  ywz61:
+    name: 无奈1
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: '=_=' }
+      - { click: '╮(╯_╰)╭' }
+      - { click: '（︶︿︶）' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '_(:з」∠)_' }
+      - { click: '@_@' }
+      - { click: '╮(╯▽╰)╭' }
+      - { click: kb_ywz6u, __include: styl/unavl_off_sym }
+      - { click: '(＠￣ー￣＠)' }
+      - { click: '_(:3」∠❀)_' }
+      - { click: '눈_눈' }
+      - { click: kb_ywz6d, __include: styl/off_sym }
+      - { click: '╭(╯ε╰)╮' }
+      - { click: '(ー_ー)!!' }
+      - { click: '_(:D)∠)_' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_hilited_menu }
+
+  ywz62:
+    name: 无奈2
+    __include: conf/ywz
+    __patch: conf/bottom
+    keys:
+      - { click: 'o_O' }
+      - { click: '╭(╯^╰)╮' }
+      - { click: '(；一_一)' }
+      - { click: Back, __include: styl/off_sym }
+      - { click: '´_>`' }
+      - { click: '-_-#' }
+      - { click: '┑(￣Д ￣)┍' }
+      - { click: kb_ywz6u, __include: styl/off_sym }
+      - { click: '≡￣﹏￣≡' }
+      - { click: '○|￣|_' }
+      - { click: '-_-||' }
+      - { click: kb_ywz6d, __include: styl/unavl_off_sym }
+      - { click: 'ㄟ( ▔, ▔ )ㄏ' }
+      - { click: '( ＿ ＿)ノ｜壁' }
+      - { click: '▄█▀█●' }
+      - { click: BackSpace, __include: styl/off_sym }
+      - { click: kb_ywz1, __include: styl/ywz_menu }
+      - { click: kb_ywz2, __include: styl/ywz_menu }
+      - { click: kb_ywz3, __include: styl/ywz_menu }
+      - { click: kb_ywz4, __include: styl/ywz_menu }
+      - { click: kb_ywz5, __include: styl/ywz_menu }
+      - { click: kb_ywz6, __include: styl/ywz_hilited_menu }
+
+
+  default:
+    name: 默认26键
+    author: '单单 <cxprcn@gmail.com>'
+    ascii_mode: 0
+    label_transform: uppercase
+    lock: true
+    width: 10
+    __patch: conf/main
+    keys:
+      # 第 1 行
+      - { width: 0 } #备用
+      - { click: 'q', long_click: '!', swipe_down: 1, __include: styl/key }
+      - { click: 'w', long_click: '@', swipe_down: 2, __include: styl/key }
+      - { click: 'e', long_click: '#', swipe_down: 3, __include: styl/key }
+      - {
+          click: 'r',
+          long_click: '$',
+          swipe_down: 4,
+          hint: 4,
+          __include: styl/key,
+        }
+      - { click: 't', long_click: '%', swipe_down: 5, __include: styl/key }
+      - { click: 'y', long_click: '^', swipe_down: 6, __include: styl/key }
+      - {
+          click: 'u',
+          long_click: '&',
+          swipe_down: 7,
+          hint: 7,
+          __include: styl/key,
+        }
+      - { click: 'i', long_click: '*', swipe_down: 8, __include: styl/key }
+      - { click: 'o', long_click: '(', swipe_down: 9, __include: styl/key }
+      - { click: 'p', long_click: ')', swipe_down: 0, __include: styl/key }
+      # 第 2 行
+      - { width: 5 }
+      - { click: 'a', long_click: select_all, __include: styl/key }
+      - {
+          click: 's',
+          long_click: '-',
+          swipe_down: '~',
+          hint: '~',
+          __include: styl/key,
+        }
+      - {
+          click: 'd',
+          long_click: '_',
+          swipe_down: '<',
+          hint: '<',
+          __include: styl/key,
+        }
+      - {
+          click: 'f',
+          long_click: '+',
+          swipe_down: '>',
+          hint: '>',
+          __include: styl/key,
+        }
+      - {
+          click: 'g',
+          long_click: '=',
+          swipe_down: kb_edit,
+          hint: '<ɪ>',
+          __include: styl/key,
+        }
+      - {
+          click: 'h',
+          long_click: '[',
+          swipe_down: '{',
+          hint: '{',
+          __include: styl/key,
+        }
+      - {
+          click: 'j',
+          long_click: ']',
+          swipe_down: '}',
+          hint: '}',
+          __include: styl/key,
+        }
+      - { click: 'k', long_click: ':', __include: styl/key }
+      - { click: 'l', long_click: ';', __include: styl/key }
+      # 第 3 行
+      - { click: Shift_L, composing: split_word, width: 15 }
+      - { click: 'z', long_click: '`', __include: styl/key }
+      - { click: 'x', long_click: cut, __include: styl/key }
+      - { click: 'c', long_click: copy, __include: styl/key }
+      - { click: 'v', long_click: paste, __include: styl/key }
+      - {
+          click: 'b',
+          long_click: '\',
+          swipe_down: '|',
+          hint: '|',
+          __include: styl/key,
+        }
+      - {
+          click: 'n',
+          long_click: '"',
+          hint: '✜',
+          swipe_up: Up,
+          swipe_down: Down,
+          swipe_left: Left,
+          swipe_right: Right,
+          __include: styl/key,
+        }
+      - { click: 'm', long_click: "'", __include: styl/key }
+      - { click: BS, swipe_up: Escape, width: 15 }
+      # 第 4 行
+      - {
+          click: Keyboard_number,
+          long_click: Menu,
+          composing: Page_Up,
+          width: 12,
+          __include: styl/off_key,
+          __patch: conf/key_height_last,
+        }
+      - {
+          click: Keyboard_symbols,
+          long_click: Color_switch,
+          composing: Page_Down,
+          width: 12,
+          __include: styl/off_key,
+        }
+      - { click: ',', long_click: '/', width: 12, __include: styl/key }
+      - {
+          click: space,
+          long_click: Mode_switch_space,
+          key_symbol_offset_x: 0,
+          width: 37,
+          key_back_color: space_back_color,
+          hilited_key_back_color: hilited_space_back_color,
+        }
+      - {
+          click: '.',
+          long_click: '?',
+          composing: select_second,
+          width: 12,
+          __include: styl/key,
+        }
+      - {
+          click: Return,
+          long_click: kb_func,
+          width: 15,
+          key_back_color: enter_back_color,
+          hilited_key_back_color: hilited_enter_back_color,
+          key_text_color: enter_text_color,
+          hilited_key_text_color: enter_text_color,
+          key_symbol_color: enter_symbol_color,
+          hilited_key_symbol_color: enter_symbol_color,
+          key_symbol_offset_x: 0,
+        }
+
+  letter:
+    ascii_mode: 1
+    lock: false
+    __include: preset_keyboards/default
+    __patch:
+      'keys/@33/long_click': Keyboard_default
+
+  qwertys:
+    name: 默认27键
+    __include: preset_keyboards/default
+    __patch:
+      'keys/@11/width': 0
+      'keys/@17/hint': ' '
+      'keys/@18/hint': ' '
+      'keys/@19/long_click': '{'
+      'keys/@20/long_click': '}'
+      'keys/@after 20/':
+        click: ';'
+        long_click: ':'
+        width: 10
+        __include: styl/key
+      'keys/@21/composing': split_word
+      'keys/@34/composing': '.'
+
+  qwerty_:
+    name: 默认30键
+    __include: preset_keyboards/qwertys
+    __patch:
+      'keys/@14/hint': ' '
+      'keys/@15/hint': ' '
+      'keys/@22/': { width: 0 }
+      'keys/@after 29/':
+        click: ','
+        long_click: '<'
+        __include: styl/key
+      'keys/@after 30/':
+        click: '.'
+        long_click: '>'
+        __include: styl/key
+      'keys/@after 31/':
+        click: '/'
+        long_click: '?'
+        __include: styl/key
+      'keys/@30/':
+        click: Shift_L
+        composing: split_word
+        width: 12
+        __patch: conf/key_height_last
+      'keys/@33/': { width: 0 }
+      'keys/@35/':
+        click: BS
+        swipe_up: Escape
+        width: 12
+
+  number:
+    name: 数字
+    author: '单单 <cxprcn@gmail.com>'
+    ascii_mode: 1
+    width: 16.6
+    __patch: conf/num
+    keys:
+      # 第一行
+      - { click: '{}{Left}', long_click: '^' }
+      - { click: '+', long_click: '%' }
+      - { click: 1 }
+      - { click: 2 }
+      - { click: 3 }
+      - { click: Back, __include: styl/off_func }
+      # 第二行
+      - { click: '[]{Left}', long_click: '_' }
+      - { click: '-', long_click: '±' }
+      - { click: 4 }
+      - { click: 5 }
+      - { click: 6 }
+      - { click: Delete, __include: styl/off_func }
+      # 第三行
+      - { click: '(){Left}', long_click: '!' }
+      - { click: '*', long_click: '×' }
+      - { click: 7 }
+      - { click: 8 }
+      - { click: 9 }
+      - { click: BackSpace, __include: styl/off_func }
+      # 第四行
+      - { click: '=', long_click: '≠' }
+      - { click: '/', long_click: '÷' }
+      - { click: space, long_click: paste}
+      - { click: 0 }
+      - { click: '.' }
+      - {
+          click: Return,
+          key_back_color: enter_sym_back_color,
+          hilited_key_back_color: hilited_enter_sym_back_color,
+          key_text_color: enter_sym_text_color,
+          hilited_key_text_color: enter_sym_text_color,
+        }
+
+  edit:
+    name: 编辑
+    author: '单单 <cxprcn@gmail.com>'
+    ascii_mode: 0
+    width: 25
+    __patch: conf/num
+    keys:
+      - { click: Home, __include: styl/off_func }
+      - { click: Up, __include: styl/off_func }
+      - { click: cut, __include: styl/off_func }
+      - { click: Back, __include: styl/off_func }
+      - { click: Left, __include: styl/off_func }
+      - {
+          click: Shift_L,
+          label: 选择,
+          key_back_color: off_sym_back_color,
+          hilited_key_back_color: hilited_off_sym_back_color,
+        }
+      - { click: Right, __include: styl/off_func }
+      - { click: Delete, __include: styl/off_func }
+      - { click: End, __include: styl/off_func }
+      - { click: Down, __include: styl/off_func }
+      - { click: Tab, __include: styl/off_func }
+      - { click: BackSpace, __include: styl/off_func }
+      - { click: select_all, __include: styl/off_func }
+      - { click: copy, __include: styl/off_func }
+      - { click: paste, __include: styl/off_func }
+      - { click: Return, __include: styl/off_func }
+
+  func:
+    name: 功能
+    author: '单单 <cxprcn@gmail.com>'
+    ascii_mode: 0
+    width: 25
+    __patch: conf/num
+    keys:
+      - { click: Candidate_switch, __include: styl/off_func }
+      - { click: Comment_switch, __include: styl/off_func }
+      - { click: Hint_switch, __include: styl/off_func }
+      - { click: Back, __include: styl/off_func }
+      - { click: Deploy, __include: styl/off_func }
+      - { click: Schema_settings, __include: styl/off_func }
+      - { click: Theme_settings, __include: styl/off_func }
+      - { click: Settings, __include: styl/off_func }
+      - { click: kb_edit, __include: styl/off_func }
+      - { click: Zdic, __include: styl/off_func }
+      - { click: MoeDict, __include: styl/off_func }
+      - { click: VOICE_ASSIST, __include: styl/off_func }
+      - { click: IME_switch, __include: styl/off_func }
+      - { click: kb_qwerty, __include: styl/off_func }
+      - { click: kb_qwertys, __include: styl/off_func }
+      - { click: kb_qwerty_, __include: styl/off_func }
+
+android_keys:
+  __include: trime:/android_keys
+
+preset_keys:
+  # 安卓
+  BRIGHTNESS_DOWN: { label: 亮度-, send: BRIGHTNESS_DOWN }
+  BRIGHTNESS_UP: { label: 亮度+, send: BRIGHTNESS_UP }
+  CALCULATOR: { label: 计算机, send: CALCULATOR }
+  CALENDAR: { label: 日历, send: CALENDAR }
+  CONTACTS: { label: 电话簿, send: CONTACTS }
+  ENVELOPE: { label: 信箱, send: ENVELOPE }
+  EXPLORER: { label: 浏览器, send: EXPLORER }
+  MUSIC: { label: 音乐, send: MUSIC }
+  POWER: { label: 电源, send: POWER }
+  SEARCH: { label: 搜寻, send: Find }
+  SLEEP: { label: 休眠, send: SLEEP }
+  VOICE_ASSIST: { label: 语音, send: VOICE_ASSIST }
+  VOLUME_DOWN: { label: 音量-, send: VOLUME_DOWN }
+  VOLUME_UP: { label: 音量+, send: VOLUME_UP }
+  VOLUME_MUTE: { label: 静音, send: VOLUME_MUTE }
+  # trime命令
+  Date: { label: 日期, command: date, option: 'yyyy-MM-dd' }
+  ChineseDate: { label: 农历, command: date, option: 'zh_CN@calendar=chinese' } #农历等日期(>=Android 7.0)：date 语言@calendar=历法 格式。具体参见https://developer.android.com/reference/android/icu/util/Calendar.html
+  Time: { label: 时间, command: date, option: 'HH:mm:ss' } #时间： date 格式
+  TrimeApp: { label: 同文, command: run, option: 'com.osfans.trime' } #运行程序: run 包名
+  TrimeCmp: { label: 同文组件, command: run, option: 'com.osfans.trime/.Pref' } #运行程序指定组件: run 包名/组件名
+  Homepage: {
+      label: 同文主页,
+      command: run,
+      option: 'https://github.com/osfans/trime',
+    } #查看网页: run 网址
+  CommitHomepage: { label: 同文网址, commit: 'https://github.com/osfans/trime' } #直接上屏
+  Wiki: {
+      label: 维基,
+      command: run,
+      option: 'https://zh.wikipedia.org/wiki/%s',
+    } #搜索网页: %s或者%1$s为当前字符
+  Google: {
+      label: 谷歌,
+      command: run,
+      option: 'https://www.google.com/search?q=%s',
+    } #搜索网页: %s或者%1$s为当前字符
+  MoeDict: { label: 萌典, command: run, option: 'https://www.moedict.tw/%3$s' } #搜索网页: %3$s为光标前字符
+  Baidu: {
+      label: 百度搜索,
+      command: run,
+      option: 'https://www.baidu.com/s?wd=%4$s',
+    } #搜索网页: %4s为光标前所有字符
+  Zdic: {
+      label: 汉典,
+      command: run,
+      option: 'http://www.zdic.net/sousuo/?q=%1$s',
+    } #搜索网页: %s或者%1$s为当前字符
+  Zdic2: {
+      label: 汉典,
+      command: run,
+      option: 'http://www.zdic.net/sousuo/?q=%2$s',
+    } #搜索网页: %2$s为当前输入的编码
+  WebSearch: { label: 搜索网页, command: web_search, option: '%4$s' } #搜索，其他view、dial、edit、search等intent，参考安卓的intent文档：https://developer.android.com/reference/android/content/Intent.html
+  Search: { label: 搜索, command: search, option: '%1$s' } #搜索短信、字典等
+  Share: { label: 分享, command: send, option: '%s' } #分享指定文本: %s或者%1$s为当前字符
+  Deploy: { label: 部署, command: broadcast, option: 'com.osfans.trime.deploy' }
+  Sync: { label: 同步, command: broadcast, option: 'com.osfans.trime.sync' }
+  # 编辑
+  Shift_L: { label: Shift, send: Shift_L, shift_lock: ascii_long }
+  Return: { label: Enter, send: Return }
+  Hide: { label: '▼', send: BACK }
+  BackSpace: { label: 退格, repeatable: true, send: BackSpace }
+  space: { label: ' ', repeatable: false, functional: false, send: space }
+  Escape: { label: Esc, send: Escape }
+  Tab: { label: Tab, send: Tab }
+  Home: { label: Home, send: Home }
+  Insert: { label: Ins, send: Insert }
+  Delete: { label: Del, send: Delete }
+  End: { label: End, send: End }
+  Page_Up: { label: '⇐', send: Page_Up }
+  Page_Down: { label: '⇒', send: Page_Down }
+  Left: { label: '←', send: Left }
+  Down: { label: '↓', send: Down }
+  Up: { label: '↑', send: Up }
+  Right: { label: '→', send: Right }
+  select_all: { label: '☑', send: Control+a }
+  Clear: { label: 清除, text: '{Control+a}{BackSpace}' } #全选并删除
+  cut: { label: '✂', send: Control+x }
+  cut_all: { label: 全挪, text: '{Control+a}{Control+x}' } #全选并剪切
+  copy: { label: '❐', send: Control+c }
+  copy_all: { label: 全誊, text: '{Control+a}{Control+c}' } #全选并复制
+  paste: { label: '▣', send: Control+v }
+  paste_text: { label: 贴上文本, send: Control+Shift+Alt+v } #>=Android 6.0
+  share_text: { label: 分享文本, send: Control+Alt+s } #>=Android 6.0
+  redo: { label: 重做, send: Control+y } #>=Android 6.0
+  undo: { label: 撤销, send: Control+z } #>=Android 6.0
+  # rime组合键
+  F4: { label: 方案选单, send: F4 }
+  BackToPreviousSyllable: { label: 删音节, send: Control+BackSpace }
+  CommitRawInput: { label: 编码, send: Control+Return }
+  CommitScriptText: { label: 编码, send: Shift+Return }
+  CommitComment: { label: 编码, send: Control+Shift+Return }
+  DeleteCandidate: { label: 删词, send: Control+Delete }
+  # rime状态
+  Mode_switch: { toggle: ascii_mode, send: Mode_switch, states: [中文, 英文] }
+  Zenkaku_Hankaku:
+    { toggle: full_shape, send: Mode_switch, states: [半角, 全角] }
+  Henkan: { toggle: simplification, send: Mode_switch, states: [汉字, 汉字] }
+  Charset_switch:
+    { toggle: extended_charset, send: Mode_switch, states: [常用, 增广] }
+  Punct_switch: { toggle: ascii_punct, send: Mode_switch, states: [。，, ．，] }
+  Candidate_switch:
+    { toggle: _hide_candidate, send: Mode_switch, states: [有候选, 无候选] }
+  Comment_switch:
+    { toggle: _hide_comment, send: Mode_switch, states: [有注释, 无注释] }
+  Hint_switch:
+    { toggle: _hide_key_hint, send: Mode_switch, states: [有下标, 无下标] }
+  # trime设定
+  IME_switch: { label: 输入法, send: LANGUAGE_SWITCH } #弹出对话框选择输入法
+  IME_last: { label: 上一输入法, send: LANGUAGE_SWITCH, select: .last } #直接切换到上一输入法
+  IME_next: { label: 下一输入法, send: LANGUAGE_SWITCH, select: .next } #直接切换到下一输入法
+  Schema_switch: { label: 下一方案, send: Control+Shift+1 }
+  Color_switch: { label: '✿', send: PROG_RED }
+  Help: { label: 说明, send: Help }
+  Info: { label: 关于, send: INFO }
+  Menu: { label: '◉', send: Menu }
+  Settings: { label: 设置, send: SETTINGS }
+  Color_settings: { label: 配色, send: SETTINGS, option: 'color' }
+  Theme_settings: { label: 主题, send: SETTINGS, option: 'theme' }
+  Schema_settings: { label: 方案, send: SETTINGS, option: 'schema' }
+
+  # trime键盘
+  Mode_switch_space:
+    { toggle: ascii_mode, send: Mode_switch, states: [' ', 'ascii'] }
+  Keyboard_switch: { label: 键盘, send: Eisu_toggle, select: .next }
+  Back: { label: 返回, send: Eisu_toggle, select: .default }
+  Keyboard_default: { label: ' ', send: Eisu_toggle, select: .default }
+  kb_qwerty: { label: ' ', send: Eisu_toggle, select: default }
+  Keyboard_letter: { label: ' ', send: Eisu_toggle, select: letter }
+  kb_qwertys: { label: ' ', send: Eisu_toggle, select: qwertys }
+  kb_qwerty_: { label: ' ', send: Eisu_toggle, select: qwerty_ }
+  Keyboard_number: { label: '123', send: Eisu_toggle, select: number }
+  Keyboard_symbols: { label: '۞', send: Eisu_toggle, select: symbols }
+  kb_edit: { label: '编辑', send: Eisu_toggle, select: edit }
+  kb_func: { label: '❖', send: Eisu_toggle, select: func }
+  # 自定义按键
+  BS: { label: '⌫', repeatable: true, send: BackSpace }
+  select_second: { label: '②', send: 2 }
+  split_word: { label: "'分词", send: apostrophe }
+  # 增补按键
+  kb_sym1: { label: '◀', send: Eisu_toggle, select: symbols }
+  kb_sym2: { label: '▶', send: Eisu_toggle, select: sym211 }
+
+  kb_sym11: { label: '中文', send: Eisu_toggle, select: symbols }
+  kb_sym11u: { label: '▲', send: Eisu_toggle, select: symbols }
+  kb_sym11d: { label: '▼', send: Eisu_toggle, select: sym112 }
+
+  kb_sym12: { label: '英文', send: Eisu_toggle, select: sym121 }
+  kb_sym12u: { label: '▲', send: Eisu_toggle, select: sym121 }
+  kb_sym12d: { label: '▼', send: Eisu_toggle, select: sym122 }
+
+  kb_sym15: { label: '特殊', send: Eisu_toggle, select: sym151 }
+  kb_sym15u1: { label: '▲', send: Eisu_toggle, select: sym151 }
+  kb_sym15d2: { label: '▼', send: Eisu_toggle, select: sym152 }
+  kb_sym15u2: { label: '▲', send: Eisu_toggle, select: sym152 }
+  kb_sym15d3: { label: '▼', send: Eisu_toggle, select: sym153 }
+  kb_sym15u3: { label: '▲', send: Eisu_toggle, select: sym153 }
+  kb_sym15d4: { label: '▼', send: Eisu_toggle, select: sym154 }
+  kb_sym15u4: { label: '▲', send: Eisu_toggle, select: sym154 }
+  kb_sym15d5: { label: '▼', send: Eisu_toggle, select: sym155 }
+
+  kb_sym16: { label: '数学', send: Eisu_toggle, select: sym161 }
+  kb_sym16u1: { label: '▲', send: Eisu_toggle, select: sym161 }
+  kb_sym16d2: { label: '▼', send: Eisu_toggle, select: sym162 }
+  kb_sym16u2: { label: '▲', send: Eisu_toggle, select: sym162 }
+  kb_sym16d3: { label: '▼', send: Eisu_toggle, select: sym163 }
+  kb_sym16u3: { label: '▲', send: Eisu_toggle, select: sym163 }
+  kb_sym16d4: { label: '▼', send: Eisu_toggle, select: sym164 }
+
+  kb_sym17: { label: '序号', send: Eisu_toggle, select: sym171 }
+  kb_sym17u: { label: '▲', send: Eisu_toggle, select: sym171 }
+  kb_sym17d: { label: '▼', send: Eisu_toggle, select: sym172 }
+
+  kb_sym21: { label: '注音', send: Eisu_toggle, select: sym211 }
+  kb_sym21u1: { label: '▲', send: Eisu_toggle, select: sym211 }
+  kb_sym21d2: { label: '▼', send: Eisu_toggle, select: sym212 }
+  kb_sym21u2: { label: '▲', send: Eisu_toggle, select: sym212 }
+  kb_sym21d3: { label: '▼', send: Eisu_toggle, select: sym213 }
+
+  kb_sym22: { label: '日文', send: Eisu_toggle, select: sym221 }
+  kb_sym22u1: { label: '▲', send: Eisu_toggle, select: sym221 }
+  kb_sym22d2: { label: '▼', send: Eisu_toggle, select: sym222 }
+  kb_sym22u2: { label: '▲', send: Eisu_toggle, select: sym222 }
+  kb_sym22d3: { label: '▼', send: Eisu_toggle, select: sym223 }
+  kb_sym22u3: { label: '▲', send: Eisu_toggle, select: sym223 }
+  kb_sym22d4: { label: '▼', send: Eisu_toggle, select: sym224 }
+  kb_sym22u4: { label: '▲', send: Eisu_toggle, select: sym224 }
+  kb_sym22d5: { label: '▼', send: Eisu_toggle, select: sym225 }
+  kb_sym22u5: { label: '▲', send: Eisu_toggle, select: sym225 }
+  kb_sym22d6: { label: '▼', send: Eisu_toggle, select: sym226 }
+  kb_sym22u6: { label: '▲', send: Eisu_toggle, select: sym226 }
+  kb_sym22d7: { label: '▼', send: Eisu_toggle, select: sym227 }
+
+  kb_sym23: { label: '音标', send: Eisu_toggle, select: sym231 }
+  kb_sym23u: { label: '▲', send: Eisu_toggle, select: sym231 }
+  kb_sym23d: { label: '▼', send: Eisu_toggle, select: sym232 }
+
+  kb_sym24: { label: '希俄', send: Eisu_toggle, select: sym241 }
+  kb_sym24u1: { label: '▲', send: Eisu_toggle, select: sym241 }
+  kb_sym24d2: { label: '▼', send: Eisu_toggle, select: sym242 }
+  kb_sym24u2: { label: '▲', send: Eisu_toggle, select: sym242 }
+  kb_sym24d3: { label: '▼', send: Eisu_toggle, select: sym243 }
+  kb_sym24u3: { label: '▲', send: Eisu_toggle, select: sym243 }
+  kb_sym24d4: { label: '▼', send: Eisu_toggle, select: sym244 }
+  kb_sym24u4: { label: '▲', send: Eisu_toggle, select: sym244 }
+  kb_sym24d5: { label: '▼', send: Eisu_toggle, select: sym245 }
+
+  kb_sym25: { label: '拉丁', send: Eisu_toggle, select: sym251 }
+  kb_sym25u1: { label: '▲', send: Eisu_toggle, select: sym251 }
+  kb_sym25d2: { label: '▼', send: Eisu_toggle, select: sym252 }
+  kb_sym25u2: { label: '▲', send: Eisu_toggle, select: sym252 }
+  kb_sym25d3: { label: '▼', send: Eisu_toggle, select: sym253 }
+
+  kb_sym26: { label: '制表', send: Eisu_toggle, select: sym261 }
+  kb_sym26u1: { label: '▲', send: Eisu_toggle, select: sym261 }
+  kb_sym26d2: { label: '▼', send: Eisu_toggle, select: sym262 }
+  kb_sym26u2: { label: '▲', send: Eisu_toggle, select: sym262 }
+  kb_sym26d3: { label: '▼', send: Eisu_toggle, select: sym263 }
+  kb_sym26u3: { label: '▲', send: Eisu_toggle, select: sym263 }
+  kb_sym26d4: { label: '▼', send: Eisu_toggle, select: sym264 }
+
+  kb_emoji: { label: '😂', send: Eisu_toggle, select: emoji1 }
+  kb_emojiu1: { label: '▲', send: Eisu_toggle, select: emoji1 }
+  kb_emojid2: { label: '▼', send: Eisu_toggle, select: emoji2 }
+  kb_emojiu2: { label: '▲', send: Eisu_toggle, select: emoji2 }
+  kb_emojid3: { label: '▼', send: Eisu_toggle, select: emoji3 }
+  kb_emojiu3: { label: '▲', send: Eisu_toggle, select: emoji3 }
+  kb_emojid4: { label: '▼', send: Eisu_toggle, select: emoji4 }
+  kb_emojiu4: { label: '▲', send: Eisu_toggle, select: emoji4 }
+  kb_emojid5: { label: '▼', send: Eisu_toggle, select: emoji5 }
+  kb_emojiu5: { label: '▲', send: Eisu_toggle, select: emoji5 }
+  kb_emojid6: { label: '▼', send: Eisu_toggle, select: emoji6 }
+
+  kb_ywz: { label: '^_^', send: Eisu_toggle, select: ywz11 }
+  kb_ywz1: { label: 开心, send: Eisu_toggle, select: ywz11 }
+  kb_ywz1u: { label: '▲', send: Eisu_toggle, select: ywz11 }
+  kb_ywz1d: { label: '▼', send: Eisu_toggle, select: ywz12 }
+  kb_ywz2: { label: 喜欢, send: Eisu_toggle, select: ywz21 }
+  kb_ywz2u: { label: '▲', send: Eisu_toggle, select: ywz21 }
+  kb_ywz2d: { label: '▼', send: Eisu_toggle, select: ywz22 }
+  kb_ywz3: { label: 伤心, send: Eisu_toggle, select: ywz31 }
+  kb_ywz3u: { label: '▲', send: Eisu_toggle, select: ywz31 }
+  kb_ywz3d: { label: '▼', send: Eisu_toggle, select: ywz32 }
+  kb_ywz4: { label: 生气, send: Eisu_toggle, select: ywz41 }
+  kb_ywz4u: { label: '▲', send: Eisu_toggle, select: ywz41 }
+  kb_ywz4d: { label: '▼', send: Eisu_toggle, select: ywz42 }
+  kb_ywz5: { label: 惊讶, send: Eisu_toggle, select: ywz51 }
+  kb_ywz5u: { label: '▲', send: Eisu_toggle, select: ywz51 }
+  kb_ywz5d: { label: '▼', send: Eisu_toggle, select: ywz52 }
+  kb_ywz6: { label: 无奈, send: Eisu_toggle, select: ywz61 }
+  kb_ywz6u: { label: '▲', send: Eisu_toggle, select: ywz61 }
+  kb_ywz6d: { label: '▼', send: Eisu_toggle, select: ywz62 }
